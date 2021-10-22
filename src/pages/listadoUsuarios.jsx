@@ -1,4 +1,4 @@
-giimport {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Footer from 'components/Footer';
 /*Se importa logo */
 import logoPrana from "media/logoNavbar.png";
