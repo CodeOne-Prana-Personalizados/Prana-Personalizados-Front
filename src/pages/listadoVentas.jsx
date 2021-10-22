@@ -8,7 +8,7 @@ import HeaderP from 'components/HeaderP';
 import Ventas from "../services/codeone";
 import React, {useState, useEffect} from "react";
 
-const ListadoVentas =() => {
+const ListadoVentas=()=>{
 
 
     const [ventas, setVentas] = useState([]);
@@ -29,9 +29,9 @@ const ListadoVentas =() => {
           });
       };
 
-      const deleteVenta = (id_ventas) => {
-        Ventas.deleteVenta(id_ventas)
-          alert('Venta eliminada');
+      const deleteVenta = (id_venta) => {
+        Ventas.deleteVenta(id_venta)
+          alert('venta eliminada');
       };
 
 
@@ -62,7 +62,7 @@ const ListadoVentas =() => {
 
 
                                 <div className= "tablaListaVentas">
-                                    <div className = "cuadroTablaUsuarios">{venta.id_ventas}</div>
+                                    <div className = "cuadroTablaUsuarios">{venta.id_venta}</div>
                                     <div className = "cuadroUsuarios">{venta.id_cliente}</div>
                                     <div className = "cuadroUsuarios">{venta.fecha_venta}</div>
                                     <div className = "cuadroTablaUsuarios">{venta.estado_venta}</div>
@@ -72,7 +72,7 @@ const ListadoVentas =() => {
 
                                     <Link to={{
                                         pathname: '/editarVenta',
-                                        state: {id_ventas:venta.id_ventas,
+                                        state: {id_venta:venta.id_venta,
                                             nombre:venta.id_cliente, 
                                             correo:venta.fecha_venta,
                                             estado_venta:venta.estado_venta,
@@ -83,7 +83,7 @@ const ListadoVentas =() => {
                                     </div></Link>
 
                                     
-                                    <div className = "cuadroTablaUsuarios botonModulos"><img className ="icoTabla" onClick={() => deleteVenta(venta.id_ventas)} src= {iconoBasurero} alt="Eliminar"/></div>
+                                    <div className = "cuadroTablaUsuarios botonModulos"><img className ="icoTabla" onClick={() => deleteVenta(venta.id_venta)} src= {iconoBasurero} alt="Eliminar"/></div>
                                 
                                 </div>
                             </section>
