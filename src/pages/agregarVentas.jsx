@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 import Footer from 'components/Footer';
 import React, {useState} from "react";
-import Ventas from "../services/ventas";
+import Venta from "../services/ventas";
 import http from "../http-common";
 import PrivateRoute from 'components/PrivateRoute';
 import HeaderP from 'components/HeaderP';

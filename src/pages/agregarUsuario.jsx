@@ -14,12 +14,12 @@ const AgregarUsuario = () => {
     
     const [input, setInput] =useState({
         id_usuario: 0,
-        nombre: "",
+        nombre: '',
         correo: "",
         celular: "",
-        fecha_ingreso: "",
+        fecha_ingreso: '',
         estado:"",
-        rol: ""
+        rol: "",
     }) 
 
     function handleChange(event){
@@ -50,10 +50,10 @@ const AgregarUsuario = () => {
                             <form  className="tablaAgregarUsuarios" action="ejemplo.php" method="get" >
 
                             <p className = "letraEncabezado " >ID: </p>
-                                <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleChange} name="id_usuario" size="40" value={input.id_usuario} /></p>
+                                <p className="inputUsuario cuadroParaUsuarios"><input  onChange={handleChange} name="id_usuario" size="40" value={input.id_usuario} /></p>
 
                                 <p className = "letraEncabezado " >Nombre: </p>
-                                <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleChange} name="nombre" size="40" value={input.nombre} /></p>
+                                <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleChange}  autocomplete="off" name="nombre" size="40" value={input.nombre} /></p>
 
                                 <p className = "letraEncabezado " >Correo Gmail: </p>
                                 <p className="inputUsuario cuadroParaUsuarios"><input type="email" onChange={handleChange} name="correo" size="40" value={input.correo} /></p>
@@ -70,6 +70,7 @@ const AgregarUsuario = () => {
                                 <p className = "letraEncabezado  " >Rol:</p>
                                 <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleChange} name="rol" value={input.rol} /></p>
 
+                        
                             </form>
                             <div onClick={handleClic} className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"> <span>Agregar Usuario</span></Link></div>
                         </ul>
