@@ -15,7 +15,7 @@ import ComprobanteEditar from 'pages/comprobanteEditar.jsx';
 import Login from 'pages/login.jsx';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/estilos.css';
-import { Auth0Provider } from "@auth0/auth0-react";
+import { Auth0Provider } from "@auth0/auth0-react"; 
 function App() {
     return (
       <Auth0Provider
@@ -80,3 +80,5 @@ function App() {
     );
   }
   export default App;
+
+//borrar//
