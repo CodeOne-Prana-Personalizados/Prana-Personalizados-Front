@@ -29,10 +29,11 @@ const ListadoVentas=()=>{
           });
       };
 
-      const deleteVenta = (id_venta) => {
-        Ventas.deleteVenta(id_venta)
-          alert('Venta Eliminada');
-      };
+
+      const deleteVenta =(id_venta)=> {
+          Ventas.deleteVenta(id_venta)
+          alert("Venta Eliminada")
+      }
 
 
     return(
@@ -49,8 +50,8 @@ const ListadoVentas=()=>{
                                 <div className = "listadodeVentas letraEncabezado">fecha</div>
                                 <div className = "listadodeVentas letraEncabezado">Estado</div>
                                 <div className = "listadodeVentas letraEncabezado">valor</div>
-                                <div className = "listadodeVentas letraEncabezado">Ver Información</div>
                                 <div className = "listadodeVentas letraEncabezado">Editar</div>
+                                <div className = "listadodeVentas letraEncabezado">Ver Información</div>
                                 <div className = "listadodeVentas letraEncabezado">Eliminar</div>
                             
                                 </div>
@@ -68,21 +69,6 @@ const ListadoVentas=()=>{
                                     <div className = "listadodeVentas cuadroTabla">{venta.estado_venta}</div>
                                     <div className = "listadodeVentas cuadroTabla">{venta.valor_total}</div>
 
-                                    <Link  to={{
-                                    pathname: '/verVenta',
-                                    state: {id_venta: venta.id_venta,
-                                        id_cliente: venta.id_cliente,
-                                        nombre_producto: venta.nombre_producto,
-                                        nombre_cliente: venta.nombre_cliente,
-                                        vendedor: venta.vendedor,
-                                        fecha_venta: venta.fecha_venta,
-                                        estado_venta: venta.estado_venta,
-                                        valor_venta: venta.valor_venta,
-                                        cantidad:venta.cantidad,
-                                        valor_total: venta.valor_total},
-                                }} img className ="icoTabla"><div className = "cuadroTabla botonModulos"><i class="fas fa-eye"></i>
-                                </div></Link>
-
                                     <Link to={{
                                         pathname: '/editarVenta',
                                         state: {id_venta: venta.id_venta,
@@ -99,6 +85,23 @@ const ListadoVentas=()=>{
                                         
                                         <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>
                                     </div></Link>
+
+                                    <Link  to={{
+                                    pathname: '/verVenta',
+                                    state: {id_venta: venta.id_venta,
+                                        id_cliente: venta.id_cliente,
+                                        nombre_producto: venta.nombre_producto,
+                                        nombre_cliente: venta.nombre_cliente,
+                                        vendedor: venta.vendedor,
+                                        fecha_venta: venta.fecha_venta,
+                                        estado_venta: venta.estado_venta,
+                                        valor_venta: venta.valor_venta,
+                                        cantidad:venta.cantidad,
+                                        valor_total: venta.valor_total},
+                                }} img className ="icoTabla"><div className = "cuadroTabla botonModulos"><i class="fas fa-eye"></i>
+                                </div></Link>
+
+                                    
 
                                     <div className = "cuadroTabla botonModulos"><img className ="icoTabla" onClick={() => deleteVenta(venta.id_venta)} src= {iconoBasurero} alt="Eliminar"/></div>
 

@@ -4,6 +4,7 @@ import InfoProductos from 'pages/infoProductos.jsx';
 import AgregarProducto from 'pages/agregarProducto.jsx';
 import EditarProducto from 'pages/editarProducto.jsx';
 import EditarUsuario from 'pages/editarUsuario.jsx';
+import EditarVenta from 'pages/editarVenta.jsx';
 import ListadoUsuarios from 'pages/listadoUsuarios.jsx';
 import InfoUsuario from 'pages/infoUsuario';
 import AgregarUsuario from 'pages/agregarUsuario.jsx';
@@ -14,6 +15,7 @@ import ComprobaciónAgregar from 'pages/comprobaciónAgregar.jsx';
 import ComprobanteEditar from 'pages/comprobanteEditar.jsx';
 import VerProducto from 'pages/verProducto.jsx';
 import VerUsuario from 'pages/verUsuario.jsx';
+import VerVenta from 'pages/verVenta.jsx';
 import Login from 'pages/login.jsx';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/estilos.css';
@@ -41,6 +43,9 @@ function App() {
                 <Route path='/editarProducto'>
                   <EditarProducto />
                 </Route>
+                <Route path='/editarVenta'>
+                  <EditarVenta />
+                </Route>
                 <Route path='/verProducto'>
                   <VerProducto />
                 </Route>
@@ -55,6 +60,9 @@ function App() {
                 </Route> 
                 <Route path='/agregarVenta'>
                   <AgregarVenta />
+                </Route>
+                <Route path='/verVenta'>
+                  <VerVenta />
                 </Route>
                 <Route path='/listadoUsuarios'>
                   <ListadoUsuarios />
