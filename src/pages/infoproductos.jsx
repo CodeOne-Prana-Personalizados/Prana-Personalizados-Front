@@ -1,49 +1,16 @@
-import {Link} from 'react-router-dom';
 import Footer from 'components/Footer';
-/*Se importa logo */
-import logoPrana from "media/logoNavbar.png";
-import logoCodeOne from "media/logoCodeOne.png";
-/*Se importa iconos necesarios para la página*/
-import iconoUsuarioVerde from "media/iconoUsuario.png";
-import iconoBuscar from "media/iconoBusqueda.ico";
 import cuadernoPsico from 'media/carruselProductos/cuadernoPsico.png';
 import PrivateRoute from 'components/PrivateRoute';
-function InfoProductos() {
+import HeaderP from 'components/HeaderP';
+
+const InfoProductos =() =>{
+
+
     return(
         <div className="infoProductos">
             <PrivateRoute>
                 <body>
-                    <header> 
-                            <ul className="barraRedes">
-                                <li><i className="fas fa-palette"></i></li>
-                                <div className= "icoRedes">
-                                    <li><i className=" fab fa-facebook"></i></li>
-                                    <li><i className=" fab fa-instagram"></i></li>
-                                    <li><i className="fab fa-whatsapp"></i></li>
-                                </div>
-                            </ul>
-                            <ul className="navbar">
-                                <li>
-                                    <div> 
-                                        <Link to = "/" className ="link"><img className="boton logo" src={logoPrana} alt= "imagen" /></Link>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div className="buscar">
-                                        <input placeholder ="Buscar Productos"/>
-                                        <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
-                                    </div>
-                                </li>
-                                <li className ="boton tituloSeccionPagina"><Link to = "/listadoProductos" className ="link">Administración de Productos</Link></li>
-                                <li>
-                                    <div className = "botonUsuario">
-                                        <span className="nombreUsuario">Cerrar Sesión</span>
-                                        <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
-                                    </div>
-                                </li>
-                            </ul>
-                        </header>  
+                <HeaderP nombreBuscador='Buscar Producto' linkModulo= '/listadoProductos' nombreModulo = "Administración de Productos"/>
 
                         <main>
                             <section>

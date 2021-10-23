@@ -1,6 +1,6 @@
 import Index from 'pages';
 import ListadoProductos from 'pages/listadoProductos.jsx';
-import InfoProductos from 'pages/infoProductos';
+import InfoProductos from 'pages/infoProductos.jsx';
 import AgregarProducto from 'pages/agregarProducto.jsx';
 import EditarProducto from 'pages/editarProducto.jsx';
 import EditarUsuario from 'pages/editarUsuario.jsx';
@@ -12,6 +12,8 @@ import AgregarVenta from 'pages/agregarVentas.jsx';
 import ListadoVentas from 'pages/listadoVentas.jsx';
 import ComprobaciónAgregar from 'pages/comprobaciónAgregar.jsx';
 import ComprobanteEditar from 'pages/comprobanteEditar.jsx';
+import VerProducto from 'pages/verProducto.jsx';
+import VerUsuario from 'pages/verUsuario.jsx';
 import Login from 'pages/login.jsx';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/estilos.css';
@@ -38,6 +40,12 @@ function App() {
                 </Route>
                 <Route path='/editarProducto'>
                   <EditarProducto />
+                </Route>
+                <Route path='/verProducto'>
+                  <VerProducto />
+                </Route>
+                <Route path='/verUsuario'>
+                  <VerUsuario />
                 </Route>
                 <Route path='/listadoVentas'>
                   <ListadoVentas />
@@ -80,3 +88,4 @@ function App() {
     );
   }
   export default App;
+//borrar//
