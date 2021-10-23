@@ -14,11 +14,13 @@ const EditarVentas =(props) =>{
 
     let i_id_venta=location.state.id_venta;
     let i_cliente=location.state.id_cliente;
+    let i_cliente=location.state.nombre_producto;
     let i_vendedpr=location.state.vendedor;
     let i_fecha_venta=location.state.fecha_venta;
-    let i_fecha_nacimiento=location.state.fecha_nacimiento;
     let i_estado_venta=location.state.estado_venta;
     let i_valor_venta=location.state.valor_venta;
+    let i_cliente=location.state.cantidad;
+    let i_cliente=location.state.valor_total;
     
     let editing = false;
   
@@ -33,14 +35,15 @@ const EditarVentas =(props) =>{
       /*}*/
     
       const [nuevaInfo, setNuevaInfo] = useState({
-        id_ventas: i_id_ventas,
-        nombre: i_nombre,
-        correo: i_correo,
-        celular: i_celular,
-        fecha_nacimiento: i_fecha_nacimiento,
-        fecha_ingreso: i_fecha_ingreso,
-        estado: i_estado,
-        rol: i_rol
+        id_venta: i_id_venta,
+        id_cliente: i_id_cliente,
+        nombre_producto:nombre_producto,
+        vendedor: i_vendedor,
+        fecha_venta: i_fecha_venta,
+        estado_venta: i_estado_venta,
+        valor_venta: i_valor_venta,
+        cantidad: i_cantidad,
+        valor_total: i_valor_venta
       });
     const [submitted, setSubmitted] = useState(false);
   
