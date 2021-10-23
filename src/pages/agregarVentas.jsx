@@ -62,31 +62,6 @@ const AgregarVenta = () => {
       const [vendedor, setUsuario] = useState([]);
       const [selectedUsuario, setSelectedUsuario] = useState('');
 
-      /*Productos*/
-      const [productos, setProductos] = useState([]);
-
-    useEffect(() => {
-        retrieveProductos();
-      }, []);
-
-    const retrieveProductos = () => {
-        Productos.getAll()
-          .then(response => {
-            console.log(response.data);
-            setProductos(response.data.productos);
-            
-          })
-          .catch(e => {
-            console.log(e);
-          });
-      };
-
-      const [producto, setProducto] = useState([]);
-      const [selectedProducto, setSelectedProducto] = useState('');
-
-
-
-
 
 
     return(
@@ -138,7 +113,6 @@ const AgregarVenta = () => {
                                 </div>
                             </ul>
                         </section>
-                        <div className = "botonAgregarProducto botonModulos titulo centrar"><span>Agregar Productos</span></div>
 
                         <section>
                             <div className= "tablaNumeroProductos">
@@ -156,7 +130,7 @@ const AgregarVenta = () => {
                         
                         <section className = "tablaValorTotal">
                             <div className = "tablaValorTotal cuadroValorTotal letraEncabezado">Valor total de la compra</div>
-                            <div className = "cuadroTabla infoAgregarVenta inputAgregarventa"><span> onChange={handleChange} name="valor_total" value={valor_venta*cantidad} </span></div>
+                            <div className = "cuadroTabla infoAgregarVenta inputAgregarventa"><input onChange={handleChange} name="valor_total" value={input.valor_total} /></div>
                         </section>
                         <section>
                             <div onClick={handleClic} className = "botonAgregarVenta botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"> <span>Agregar Ventas</span></Link></div>
