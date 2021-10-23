@@ -66,7 +66,7 @@ const ListadoVentas=()=>{
                                     <div className = "listadodeVentas cuadroTabla">{venta.id_cliente}</div>
                                     <div className = "listadodeVentas cuadroTabla">{venta.fecha_venta}</div>
                                     <div className = "listadodeVentas cuadroTabla">{venta.estado_venta}</div>
-                                    <div className = "listadodeVentas cuadroTabla">{venta.valor_venta}</div>
+                                    <div className = "listadodeVentas cuadroTabla">{venta.valor_total}</div>
 
                                     <Link  to={{
                                     pathname: '/verVenta',
