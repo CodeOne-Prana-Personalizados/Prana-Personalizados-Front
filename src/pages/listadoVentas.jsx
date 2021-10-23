@@ -5,7 +5,7 @@ import iconoGranaje from "media/ruedaConfiguración.png";
 import iconoBasurero from "media/basurero.png";
 import PrivateRoute from 'components/PrivateRoute';
 import HeaderP from 'components/HeaderP';
-import Ventas from "../services/codeone";
+import Ventas from "../services/venta";
 import React, {useState, useEffect} from "react";
 
 const ListadoVentas=()=>{
@@ -62,11 +62,11 @@ const ListadoVentas=()=>{
 
 
                                 <div className= "tablaListaVentas">
-                                    <div className = "cuadroTablaUsuarios">{venta.id_venta}</div>
-                                    <div className = "cuadroUsuarios">{venta.id_cliente}</div>
-                                    <div className = "cuadroUsuarios">{venta.fecha_venta}</div>
-                                    <div className = "cuadroTablaUsuarios">{venta.estado_venta}</div>
-                                    <div className = "cuadroTablaUsuarios">{venta.valor_venta}</div>
+                                    <div className = "listadodeVentas cuadroTabla">{venta.id_venta}</div>
+                                    <div className = "listadodeVentas cuadroTabla">{venta.id_cliente}</div>
+                                    <div className = "listadodeVentas cuadroTabla">{venta.fecha_venta}</div>
+                                    <div className = "listadodeVentas cuadroTabla">{venta.estado_venta}</div>
+                                    <div className = "listadodeVentas cuadroTabla">{venta.valor_venta}</div>
 
                                     <div className = "cuadroTabla botonModulos letraEncabezado"><Link to = "/infoVentas" className ="link">Ver Información</Link></div>
 

@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 import Footer from 'components/Footer';
 import React, {useState} from "react";
-import Venta from "../services/ventas";
+import Ventas from "../services/venta";
 import http from "../http-common";
 import PrivateRoute from 'components/PrivateRoute';
 import HeaderP from 'components/HeaderP';
@@ -33,6 +33,22 @@ const AgregarVenta = () => {
         http.post("/ventas", input);
         console.log(input);
     }
+
+    class App extends Component{
+        state={
+            usuarios:[]
+        }
+        ComponentDidMount(){
+            axios
+            .get("http://localhost:3000/listadoUsuarios")
+            then((response)=>{
+                console.log(response);
+                this.setState({usuarios: response})
+            })
+            .catch((error)=>{
+                console.log(error);
+            })}
+    }  
 
 
     return(

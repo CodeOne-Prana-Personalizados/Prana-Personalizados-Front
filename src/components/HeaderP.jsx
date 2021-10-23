@@ -5,6 +5,9 @@ import iconoBuscar from "media/iconoBusqueda.ico";
 import {Link} from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import useActiveRoute from 'hooks/useActiveRoute';
+import axios from 'axios';
+import { Component } from "react";
+import { response } from "express";
 
 const HeaderP = ({nombreModulo, linkModulo, nombreBuscador}) => {
     const { user , logout } = useAuth0();
@@ -12,7 +15,9 @@ const HeaderP = ({nombreModulo, linkModulo, nombreBuscador}) => {
         logout({returnTo: 'http://localhost:3000/listadoProductos'})
     localStorage.setItem('token', null)
     }
+
     const { loginWithRedirect } = useAuth0();
+
     const Ruta = ({ ruta, nombre, usuario})=>{
         console.log('usuario', usuario);
         const isActive = useActiveRoute(ruta);
@@ -22,7 +27,7 @@ const HeaderP = ({nombreModulo, linkModulo, nombreBuscador}) => {
                 <>{nombre}</> }
             </span>
         )
-    }
+    } 
 
     return(
         <header> 
