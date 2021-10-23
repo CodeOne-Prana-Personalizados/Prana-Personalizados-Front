@@ -7,6 +7,7 @@ import Ventas from "../services/venta";
 import http from "../http-common";
 import PrivateRoute from 'components/PrivateRoute';
 import HeaderP from 'components/HeaderP';
+import Usuarios from "../services/usuario";
 
 const AgregarVenta = () => {
 
@@ -36,6 +37,30 @@ const AgregarVenta = () => {
         console.log(input);
     }
 
+    const [usuarios, setUsuarios] = useState([]);
+
+    useEffect(() => {
+        retrieveUsuarios();
+      }, []);
+
+    const retrieveUsuarios = () => {
+        Usuarios.getAll()
+          .then(response => {
+            console.log(response.data);
+            setUsuarios(response.data.usuarios);
+            
+          })
+          .catch(e => {
+            console.log(e);
+          });
+      };
+
+      const [vendedor, setUsuario] = useState([]);
+     const [selectedUsuario, setSelectedUsuario] = useState('');
+
+
+
+
 
     return(
         <div classname="agregarVentas"> 
@@ -57,12 +82,18 @@ const AgregarVenta = () => {
                                         <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" ><input type="number" onChange={handleChange} name="id_cliente" size="40" value={input.id_cliente}/></div>
 
                                         <div className = "cuadroTabla cuadroBlanco letraEncabezado ">Vendedor</div>
-                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><select  onChange={handleChange} name="vendedor" value={input.vendedor} name="vendedor">
-                                        <option selected value="0"> Elige una opción </option>
-                                        <option value="1">Estefania Cano</option> 
-                                        <option value="2">Vanessa Quiroz</option> 
-                                        </select></div>
+                                        
+                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa">
+                                            <select value={input.vendedor} onChange={e => setSelectedUsuario(e.target.value)}>
+                                                <option value="">Seleccione el Vendedor</option>
+                                                {usuarios.map(vendedor => (
+                                                <option key={vendedor.nombre}>{vendedor.nombre}</option>
+                                                ))}
+                                            </select>
+                                        </div>
                                     </li>
+
+                                    
                                     </form>
 
                                     <form action="ejemplo.php" method="get">
