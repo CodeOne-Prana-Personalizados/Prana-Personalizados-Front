@@ -4,6 +4,7 @@ import InfoProductos from 'pages/infoProductos.jsx';
 import AgregarProducto from 'pages/agregarProducto.jsx';
 import EditarProducto from 'pages/editarProducto.jsx';
 import EditarUsuario from 'pages/editarUsuario.jsx';
+import EditarVenta from 'pages/editarVenta.jsx';
 import ListadoUsuarios from 'pages/listadoUsuarios.jsx';
 import InfoUsuario from 'pages/infoUsuario';
 import AgregarUsuario from 'pages/agregarUsuario.jsx';
@@ -40,6 +41,9 @@ function App() {
                 </Route>
                 <Route path='/editarProducto'>
                   <EditarProducto />
+                </Route>
+                <Route path='/editarVenta'>
+                  <EditarVenta />
                 </Route>
                 <Route path='/verProducto'>
                   <VerProducto />
