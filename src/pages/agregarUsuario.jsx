@@ -68,7 +68,7 @@ const AgregarUsuario = () => {
                                 <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleChange} name="estado" value={input.estado}/></p>
 
                                 <p className = "letraEncabezado  " >Rol:</p>
-                                <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleChange} name="rol" value={input.rol} /></p>
+                            <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleChange} name="rol" value={input.rol} /></p>
 
                         
                             </form>
