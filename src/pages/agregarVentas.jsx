@@ -15,6 +15,7 @@ const AgregarVenta = () => {
     const [input, setInput] =useState({
         id_venta: 0,
         id_cliente: 0,
+        nombre_producto: "",
         nombre_cliente: "",
         vendedor: "",
         fecha_venta: "",
@@ -61,31 +62,6 @@ const AgregarVenta = () => {
 
       const [vendedor, setUsuario] = useState([]);
       const [selectedUsuario, setSelectedUsuario] = useState('');
-
-      /*Productos*/
-      const [productos, setProductos] = useState([]);
-
-    useEffect(() => {
-        retrieveProductos();
-      }, []);
-
-    const retrieveProductos = () => {
-        Productos.getAll()
-          .then(response => {
-            console.log(response.data);
-            setProductos(response.data.productos);
-            
-          })
-          .catch(e => {
-            console.log(e);
-          });
-      };
-
-      const [producto, setProducto] = useState([]);
-      const [selectedProducto, setSelectedProducto] = useState('');
-
-
-
 
 
 
@@ -138,12 +114,11 @@ const AgregarVenta = () => {
                                 </div>
                             </ul>
                         </section>
-                        <div className = "botonAgregarProducto botonModulos titulo centrar"><span>Agregar Productos</span></div>
 
                         <section>
                             <div className= "tablaNumeroProductos">
-                                <div className = "cuadroTabla cuadroBlanco letraEncabezado">Producto 1</div>
-                                <div className = "cuadroTabla infoAgregarVenta inputAgregarventa"><input type="number" onChange={handleChange} name="id_producto" value={input.id_producto}/></div>
+                                <div className = "cuadroTabla cuadroBlanco letraEncabezado">Producto</div>
+                                <div className = "cuadroTabla infoAgregarVenta inputAgregarventa"><input type="text" onChange={handleChange} name="nombre_producto" value={input.nombre_producto}/></div>
                                 <div className = "cuadroTabla cuadroBlanco letraEncabezado">Valor Unitario</div>
                                 <div className = "cuadroTabla infoAgregarVenta inputAgregarventa"><input type="number" onChange={handleChange} name="valor_venta" value={input.valor_venta}/></div>
                                 <div className = "cuadroTabla cuadroBlanco letraEncabezado">Cantidad</div>
