@@ -6,13 +6,16 @@ import {Link} from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import useActiveRoute from 'hooks/useActiveRoute';
 
+
 const HeaderP = ({nombreModulo, linkModulo, nombreBuscador}) => {
     const { user , logout } = useAuth0();
     const cerrarSesion =()=> {
         logout({returnTo: 'http://localhost:3000/listadoProductos'})
     localStorage.setItem('token', null)
     }
+
     const { loginWithRedirect } = useAuth0();
+    
     const Ruta = ({ ruta, nombre, usuario})=>{
         console.log('usuario', usuario);
         const isActive = useActiveRoute(ruta);

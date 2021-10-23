@@ -1,24 +1,25 @@
 import {Link} from 'react-router-dom';
 import Footer from 'components/Footer';
 import React, {useState} from "react";
-import Ventas from "../services/venta";
+import Usuarios from "../services/usuario";
 import http from "../http-common";
 import { useLocation } from 'react-router-dom';
 import PrivateRoute from 'components/PrivateRoute';
 import HeaderP from 'components/HeaderP';
 
-const EditarVentas =(props) =>{
+const VerUsuario =(props) =>{
 
     const location = useLocation()
     console.log(location)
 
-    let i_id_venta=location.state.id_venta;
-    let i_cliente=location.state.id_cliente;
-    let i_vendedpr=location.state.vendedor;
-    let i_fecha_venta=location.state.fecha_venta;
+    let i_id_usuario=location.state.id_usuario;
+    let i_nombre=location.state.nombre;
+    let i_correo=location.state.correo;
+    let i_celular=location.state.celular;
     let i_fecha_nacimiento=location.state.fecha_nacimiento;
-    let i_estado_venta=location.state.estado_venta;
-    let i_valor_venta=location.state.valor_venta;
+    let i_fecha_ingreso=location.state.fecha_ingreso;
+    let i_estado=location.state.estado;
+    let i_rol=location.state.rol;
     
     let editing = false;
   
@@ -33,7 +34,7 @@ const EditarVentas =(props) =>{
       /*}*/
     
       const [nuevaInfo, setNuevaInfo] = useState({
-        id_ventas: i_id_ventas,
+        id_usuario: i_id_usuario,
         nombre: i_nombre,
         correo: i_correo,
         celular: i_celular,
@@ -55,9 +56,9 @@ const EditarVentas =(props) =>{
           console.log(event.target);
     };
   
-    const saveVentas = () => {
+    const saveUsuario = () => {
       var data = {
-        id_ventas: nuevaInfo.id_ventas,
+        id_usuario: nuevaInfo.id_usuario,
         nombre: nuevaInfo.nombre,
         correo: nuevaInfo.correo,
         celular: nuevaInfo.celular,
@@ -67,7 +68,7 @@ const EditarVentas =(props) =>{
       };
   
      
-        Ventass.updateVentas(data)
+        Usuarios.updateUsuario(data)
           .then(response => {
             setSubmitted(true);
             console.log(response.data);
@@ -79,39 +80,39 @@ const EditarVentas =(props) =>{
     };
     
     return(
-        <div className="EditarVentas">
+        <div className="EditarUsuario">
             <PrivateRoute>
                 <body> 
-                    <HeaderP nombreBuscador='Buscar Ventas' linkModulo= '/listadoVentass' nombreModulo = "Administración de Ventass"/>
+                    <HeaderP nombreBuscador='Buscar Usuario' linkModulo= '/listadoUsuarios' nombreModulo = "Administración de Usuarios"/>
                         <main>
-                            <h1 className = "tituloProductos">Editar Ventas</h1>
+                            <h1 className = "tituloProductos">Información Usuario</h1>
                             <ul>
-                                <form  className="tablaAgregarVentass" action="ejemplo.php" method="get" >
+                                <form  className="tablaAgregarUsuarios" action="ejemplo.php" method="get" >
 
                                     <p className = "letraEncabezado " >ID: </p>
-                                    <p className="inputVentas cuadroParaVentass"><input type="text" onChange={handleInputChange} name="id_ventas" size="40" value={nuevaInfo.id_ventas} /></p>
+                                    <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleInputChange} name="id_usuario" size="40" value={nuevaInfo.id_usuario} readOnly="readonly"/></p>
 
                                     <p className = "letraEncabezado " >Nombre: </p>
-                                    <p className="inputVentas cuadroParaVentass"><input type="text" onChange={handleInputChange} name="nombre" size="40" value={nuevaInfo.nombre} /></p>
+                                    <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleInputChange} name="nombre" size="40" value={nuevaInfo.nombre} readOnly="readonly"/></p>
 
                                     <p className = "letraEncabezado " >Correo Gmail: </p>
-                                    <p className="inputVentas cuadroParaVentass"><input type="email" onChange={handleInputChange} name="correo" size="40" value={nuevaInfo.correo} /></p>
+                                    <p className="inputUsuario cuadroParaUsuarios"><input type="email" onChange={handleInputChange} name="correo" size="40" value={nuevaInfo.correo} readOnly="readonly"/></p>
 
                                     <p className = "letraEncabezado  " >Número de Celular:</p>
-                                    <p className="inputVentas cuadroParaVentass" ><input type="tel" onChange={handleInputChange} name="celular" value={nuevaInfo.celular}/></p>
+                                    <p className="inputUsuario cuadroParaUsuarios" ><input type="tel" onChange={handleInputChange} name="celular" value={nuevaInfo.celular} readOnly="readonly"/></p>
                             
                                     <p className = "letraEncabezado  " >Fecha de Ingreso:</p>
-                                    <p className="inputVentas cuadroParaVentass" > <input type="date" onChange={handleInputChange} name="fecha_ingreso" value={nuevaInfo.fecha_ingreso}/></p>
+                                    <p className="inputUsuario cuadroParaUsuarios" > <input type="date" onChange={handleInputChange} name="fecha_ingreso" value={nuevaInfo.fecha_ingreso} readOnly="readonly"/></p>
 
                                     <p className = "letraEncabezado  " >Estado:</p>
-                                    <p className="inputVentas cuadroParaVentass" > <input type="text" onChange={handleInputChange} name="estado" value={nuevaInfo.estado}/></p>
+                                    <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleInputChange} name="estado" value={nuevaInfo.estado} readOnly="readonly"/></p>
 
                                     <p className = "letraEncabezado  " >Rol:</p>
-                                    <p className="inputVentas cuadroParaVentass" > <input type="text" onChange={handleInputChange} name="rol" value={nuevaInfo.rol} /></p>
+                                    <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleInputChange} name="rol" value={nuevaInfo.rol} readOnly="readonly"/></p>
 
 
                                 </form>
-                                <div onClick={saveVentas} className = "botonAgregarVentas botonModulos titulo centrar"><Link to='/listadoVentass' className="link"> <span>Guardar Cambios</span></Link></div>
+                                <div className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/listadoUsuarios' className="link"> <span>Regresar</span></Link></div>
                               </ul>
                         </main>
                     <Footer />
@@ -120,5 +121,5 @@ const EditarVentas =(props) =>{
         </div>
     );
 }
-export default EditarVentas;
+export default VerUsuario;
 
