@@ -78,7 +78,7 @@ const ListadoProductos =() => {
 
                                 <Link to={{
                                     pathname: '/editarProducto',
-                                    state: {id_producto:producto.id_producto, descripcion:producto.descripcion,
+                                    state: {id_producto:producto.id_producto, nombre_producto:producto.nombre_producto,descripcion:producto.descripcion,
                                     valor_unitario:producto.valor_unitario, estado: producto.estado},
                                 }} img className ="icoTabla"><div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>
                                 </div></Link>
@@ -87,7 +87,7 @@ const ListadoProductos =() => {
 
                                 <Link to={{
                                     pathname: '/verProducto',
-                                    state: {id_producto:producto.id_producto, descripcion:producto.descripcion,
+                                    state: {id_producto:producto.id_producto,  nombre_producto:producto.nombre_producto,descripcion:producto.descripcion,
                                     valor_unitario:producto.valor_unitario, estado: producto.estado},
                                 }} img className ="icoTabla"><div className = "cuadroTabla botonModulos"><i className ="icoTabla" class="fas fa-eye"></i>
                                 </div></Link>
