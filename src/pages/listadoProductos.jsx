@@ -47,7 +47,7 @@ const ListadoProductos =() => {
                 <h1 className = "tituloProductos">Listado de productos</h1>
                 <span className = "botonAgregarProductos botonModulos titulo centrar"><Link to='/agregarProducto' className="link">Agregar productos</Link></span>
 
-                    <ul>                               
+                    <ul className= "margin-bottom">                               
                    
                     <div className= "tablaProductos">
             
@@ -57,8 +57,9 @@ const ListadoProductos =() => {
                         <div className = "cuadroTabla letraEncabezado">valor</div>
                         <div className = "cuadroTabla letraEncabezado">Estado</div>
                         <div className = "cuadroTabla letraEncabezado">Editar</div>
+                        <div className = "cuadroTabla letraEncabezado">Ver Información</div>
                         <div className = "cuadroTabla letraEncabezado">Eliminar</div>
-                        <div className = "cuadroTabla letraEncabezado">Ver</div>
+
 
                     </div>
 
@@ -82,8 +83,6 @@ const ListadoProductos =() => {
                                     valor_unitario:producto.valor_unitario, estado: producto.estado},
                                 }} img className ="icoTabla"><div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>
                                 </div></Link>
-                                
-                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" onClick={() => deleteProducto(producto.id_producto)} src= {iconoBasurero} alt="Eliminar"/></div>
 
                                 <Link to={{
                                     pathname: '/verProducto',
@@ -91,6 +90,10 @@ const ListadoProductos =() => {
                                     valor_unitario:producto.valor_unitario, estado: producto.estado},
                                 }} img className ="icoTabla"><div className = "cuadroTabla botonModulos"><i className ="icoTabla" class="fas fa-eye"></i>
                                 </div></Link>
+                                
+                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" onClick={() => deleteProducto(producto.id_producto)} src= {iconoBasurero} alt="Eliminar"/></div>
+
+                                
 
                             </div>
                         </section>

@@ -52,14 +52,13 @@ const ListadoUsuarios=()=>{
             
                         <div className = "cuadroTablaUsuarios letraEncabezado">ID</div>
                         <div className = "cuadroUsuarios letraEncabezado">Nombre</div>
-                        <div className = "cuadroUsuarios letraEncabezado">Correo</div>
-                        <div className = "cuadroTablaUsuarios letraEncabezado">Celular</div>
                         <div className = "cuadroTablaUsuarios letraEncabezado">Fecha ingreso</div>
                         <div className = "cuadroTablaUsuarios letraEncabezado">Estado</div>
                         <div className = "cuadroTablaUsuarios letraEncabezado">Rol</div>
                         <div className = "cuadroTablaUsuarios letraEncabezado">Editar</div>
+                        <div className = "cuadroTablaUsuarios letraEncabezado">Ver Información</div>
                         <div className = "cuadroTablaUsuarios letraEncabezado">Eliminar</div>
-                        <div className = "cuadroTablaUsuarios letraEncabezado">Ver</div>
+
                     </div>
 
                     {usuarios.map((usuario) => {
@@ -71,8 +70,6 @@ const ListadoUsuarios=()=>{
                             <div className= "tablaUsuarios">
                                 <div className = "cuadroTablaUsuarios">{usuario.id_usuario}</div>
                                 <div className = "cuadroUsuarios">{usuario.nombre}</div>
-                                <div className = "cuadroUsuarios">{usuario.correo}</div>
-                                <div className = "cuadroTablaUsuarios">{usuario.celular}</div>
                                 <div className = "cuadroTablaUsuarios">{usuario.fecha_ingreso}</div>
                                 <div className = "cuadroTablaUsuarios">{usuario.estado}</div>
                                 <div className = "cuadroTablaUsuarios">{usuario.rol}</div>
@@ -81,27 +78,25 @@ const ListadoUsuarios=()=>{
                                     pathname: '/editarUsuario',
                                     state: {id_usuario:usuario.id_usuario,
                                         nombre:usuario.nombre, 
-                                        correo:usuario.correo,
-                                        celular:usuario.celular,
                                         fecha_ingreso: usuario.fecha_ingreso,
                                         estado: usuario.estado,
                                         rol:usuario.rol},
                                 }} img className ="icoTabla"><div className = "cuadroTablaUsuarios botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>
                                 </div></Link>
-                                
-                                <div className = "cuadroTablaUsuarios botonModulos"><img className ="icoTabla" onClick={() => deleteUsuario(usuario.id_usuario)} src= {iconoBasurero} alt="Eliminar"/></div>
-                                
+
                                 <Link to={{
                                     pathname: '/verUsuario',
                                     state: {id_usuario:usuario.id_usuario,
                                         nombre:usuario.nombre, 
-                                        correo:usuario.correo,
-                                        celular:usuario.celular,
                                         fecha_ingreso: usuario.fecha_ingreso,
                                         estado: usuario.estado,
                                         rol:usuario.rol},
                                 }} img className ="icoTabla"><div className = "cuadroTablaUsuarios botonModulos"><i class="fas fa-eye"></i>
                                 </div></Link>
+                                
+                                <div className = "cuadroTablaUsuarios botonModulos"><img className ="icoTabla" onClick={() => deleteUsuario(usuario.id_usuario)} src= {iconoBasurero} alt="Eliminar"/></div>
+                                
+
                             </div>
                         </section>
 

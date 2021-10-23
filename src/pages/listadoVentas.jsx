@@ -31,7 +31,7 @@ const ListadoVentas=()=>{
 
       const deleteVenta = (id_venta) => {
         Ventas.deleteVenta(id_venta)
-          alert('venta eliminada');
+          alert('Venta Eliminada');
       };
 
 
@@ -68,7 +68,20 @@ const ListadoVentas=()=>{
                                     <div className = "listadodeVentas cuadroTabla">{venta.estado_venta}</div>
                                     <div className = "listadodeVentas cuadroTabla">{venta.valor_venta}</div>
 
-                                    <div className = "cuadroTabla botonModulos letraEncabezado"><Link to = "/infoVentas" className ="link">Ver Información</Link></div>
+                                    <Link  to={{
+                                    pathname: '/verVenta',
+                                    state: {id_venta: venta.id_venta,
+                                        id_cliente: venta.id_cliente,
+                                        nombre_producto: venta.nombre_producto,
+                                        nombre_cliente: venta.nombre_cliente,
+                                        vendedor: venta.vendedor,
+                                        fecha_venta: venta.fecha_venta,
+                                        estado_venta: venta.estado_venta,
+                                        valor_venta: venta.valor_venta,
+                                        cantidad:venta.cantidad,
+                                        valor_total: venta.valor_total},
+                                }} img className ="icoTabla"><div className = "cuadroTabla botonModulos"><i class="fas fa-eye"></i>
+                                </div></Link>
 
                                     <Link to={{
                                         pathname: '/editarVenta',
@@ -79,22 +92,18 @@ const ListadoVentas=()=>{
                                             valor_venta: venta.valor_venta,},
                                     }} img className ="icoTabla">
                                         
-                                        <div className = "cuadroTablaUsuarios botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>
+                                        <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>
                                     </div></Link>
 
+                                    <div className = "cuadroTabla botonModulos"><img className ="icoTabla" onClick={() => deleteVenta(venta.id_venta)} src= {iconoBasurero} alt="Eliminar"/></div>
+
                                     
-                                    <div className = "cuadroTablaUsuarios botonModulos"><img className ="icoTabla" onClick={() => deleteVenta(venta.id_venta)} src= {iconoBasurero} alt="Eliminar"/></div>
-                                
                                 </div>
                             </section>
 
                             );
                         })}
-                        <div className = "botonAgregarUsuario botonModulos titulo centrar"> 
-                                        
-                                        <span><Link to = "/agregarVenta" className ="link">Agregar Venta</Link></span>
-                                    
-                                </div>
+                        <div className = "botonAgregarUsuario botonModulos titulo centrar"> <span><Link to = "/agregarVenta" className ="link">Agregar Venta</Link></span></div>
                         </ul>
                         </main>
                         <Footer />
