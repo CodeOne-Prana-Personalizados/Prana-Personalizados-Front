@@ -5,9 +5,9 @@ import iconoGranaje from "media/ruedaConfiguración.png";
 import iconoBasurero from "media/basurero.png";
 import PrivateRoute from 'components/PrivateRoute';
 import HeaderP from 'components/HeaderP';
-import Ventas from "../services/codeone";
+import Ventas from "../services/venta.js";
 import React, {useState, useEffect} from "react";
-
+ 
 const ListadoVentas=()=>{
 
 
