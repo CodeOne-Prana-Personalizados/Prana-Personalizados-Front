@@ -15,59 +15,68 @@ import ComprobanteEditar from 'pages/comprobanteEditar.jsx';
 import Login from 'pages/login.jsx';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/estilos.css';
+import { Auth0Provider } from "@auth0/auth0-react";
 function App() {
     return (
-      <div className='App'>
-        <Router>
-            <Switch>
-              <Route path='/listadoProductos'>
-                <ListadoProductos />
-              </Route>
-              <Route path='/infoProductos'>
-                <InfoProductos />
-              </Route>
-              <Route path='/agregarProducto'>
-                <AgregarProducto />
-              </Route>
-              <Route path='/editarProducto'>
-                <EditarProducto />
-              </Route>
-              <Route path='/listadoVentas'>
-                <ListadoVentas />
-              </Route> 
-              <Route path='/infoVentas'>
-                <InfoVentas />
-              </Route> 
-              <Route path='/agregarVenta'>
-                <AgregarVenta />
-              </Route>
-              <Route path='/listadoUsuarios'>
-                <ListadoUsuarios />
-              </Route>
-              <Route path='/infoUsuario'>
-                <InfoUsuario />
-              </Route>
-              <Route path='/agregarUsuario'>
-                <AgregarUsuario />
-              </Route>
-              <Route path='/editarUsuario'>
-                <EditarUsuario />
-              </Route>
-              <Route path='/comprobanteAgregar'>
-                <ComprobaciónAgregar />
-              </Route>
-              <Route path='/comprobanteEditar'>
-                <ComprobanteEditar />
-              </Route>
-              <Route path='/login'>
-                <Login />
-              </Route>
-              <Route path='/'>
-                <Index />
-              </Route>
-            </Switch>
-        </Router>
-      </div>
+      <Auth0Provider
+      domain="prana-personalizados.us.auth0.com"
+      clientId="1U9JJrvhZv7Qf3lHrw5Fm5xUXlcJrDYg"
+      redirectUri={window.location.origin}
+      audience='api-autenticación-prana-personalizados'
+      >
+        <div className='App'>
+          <Router>
+              <Switch>
+                <Route path='/listadoProductos'>
+                  <ListadoProductos />
+                </Route>
+                <Route path='/infoProductos'>
+                  <InfoProductos />
+                </Route>
+                <Route path='/agregarProducto'>
+                  <AgregarProducto />
+                </Route>
+                <Route path='/editarProducto'>
+                  <EditarProducto />
+                </Route>
+                <Route path='/listadoVentas'>
+                  <ListadoVentas />
+                </Route> 
+                <Route path='/infoVentas'>
+                  <InfoVentas />
+                </Route> 
+                <Route path='/agregarVenta'>
+                  <AgregarVenta />
+                </Route>
+                <Route path='/listadoUsuarios'>
+                  <ListadoUsuarios />
+                </Route>
+                <Route path='/infoUsuario'>
+                  <InfoUsuario />
+                </Route>
+                <Route path='/agregarUsuario'>
+                  <AgregarUsuario />
+                </Route>
+                <Route path='/editarUsuario'>
+                  <EditarUsuario />
+                </Route>
+                <Route path='/comprobanteAgregar'>
+                  <ComprobaciónAgregar />
+                </Route>
+                <Route path='/comprobanteEditar'>
+                  <ComprobanteEditar />
+                </Route>
+                <Route path='/login'>
+                  <Login />
+                </Route>
+                <Route path='/'>
+                  <Index />
+                </Route>
+              </Switch>
+          </Router>
+        </div>
+      </Auth0Provider>
+      
     );
   }
   export default App;

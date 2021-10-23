@@ -7,6 +7,19 @@ body{
   margin: 0px;
   
 }
+main{
+  height: 100%;
+  width: 100%;
+}
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0;
+  margin-bottom: 40px;
+}
+
 .barraRedes{
   background-color: #F2F3F4;
   margin:0px;
@@ -90,15 +103,24 @@ body{
 }
 
 .iconoUsuario{
-  height: 75px;
+  height: 70px;
+  margin-left: 14px;
 }
 .nombreUsuario{
-  font-size: 20px;
-}
-.nombreUsuario:hover{
-  cursor: pointer;
-  transform:scale(1.01);
-  font-weight:600;
+  display: grid;
+  grid-column: auto;
+  grid-template-columns: 180px;
+  grid-template-rows: 200px;
+  font-size:21px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  width: 180px;
+  font-weight: bold;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  margin-right: 50px;
+  padding: auto;
 }
 .botonUsuario{
   display: flex;
@@ -160,7 +182,10 @@ footer{
   border-bottom: 3px #F2F3F4;
   padding: 15px 15px 15px 0px;
   justify-content: space-around;
-  position:unset;
+  position: absolute;
+  bottom: 0;
+  width: 99%;
+  height: 40px;
 }
 .tamañoPaginaIndex{
   height: 390px;
@@ -188,25 +213,12 @@ footer{
 .encabezadoTabal{
 display: grid;
 grid-column: auto;
-grid-template-columns: 160px 160px 160px 160px 160px 160px 160px 160px;
+grid-template-columns: 160px 160px 160px 160px 160px 160px 160px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 color: #54571f;
 text-align: center;
+}
 
-}
-.tablaCuadernos{
-display: grid;
-border-color: #54571f;
-grid-column: auto;
-grid-template-columns: 160px 160px 160px 160px 160px 160px 160px 160px;
-grid-template-rows: 50px 50px 50px;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-color: #54571f;
-font-size: 15px;
-text-align: center;
-width: 100%;
-justify-content: center;
-}
 .icoTabla{
   height: 20px;
   padding: 4px 0px 0px 0px;
@@ -233,51 +245,27 @@ justify-content: center;
   text-align:center;
   border: 0px;
   border-radius: 15px;
-  width: 130px;
+  width: 110px;
   height: 30px;
   
 }
 
-.tablaAccesorios{
+.tablaProductos{
   display: grid;
   border-color: #54571f;
   grid-column: auto;
-  grid-template-columns:160px 160px 160px 160px 160px 160px 160px 160px ;
-  grid-template-rows: 50px 50px 50px 50px 50px 50px;
+  grid-template-columns: 160px 160px 160px 160px 160px 160px 160px 160px;
+  grid-template-rows: 65px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
   font-size: 15px;
   text-align: center;
   width: 100%;
+  height: 100%;
   justify-content: center;
-  }
+  margin-left: 5%; 
+}
 
-.tablaOrganizadores{
-  display: grid;
-  border-color: #54571f;
-  grid-column: auto;
-  grid-template-columns: 160px 160px 160px 160px 160px 160px;
-  grid-template-rows: 50px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #54571f;
-  font-size: 15px;
-  text-align: center;
-  width: 100%;
-  justify-content: center;
-}
-.tablaUsuarios{
-  display: grid;
-  border-color: #54571f;
-  grid-column: auto;
-  grid-template-columns: 130px 130px 130px 130px 130px 130px 130px 130px 130px 130px ;
-  grid-template-rows: 50px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #78796e;
-  font-size: 13px;
-  text-align: center;
-  width: 100%;
-  justify-content: center;
-}
 .botonAgregar{
   background-color: #f29263;
   font-size: 20px;
@@ -286,9 +274,20 @@ justify-content: center;
   width: 200px;
   font-weight: bold;
   padding: 2px;
-  margin-left: 30px;
+  margin-left: 40% ;
+  margin-bottom: 3%;
 }
-
+.botonAgregarProductos{
+  background-color: #f29263;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #54571f;
+  width: 200px;
+  font-weight: bold;
+  padding: 2px;
+  margin-bottom: 10px;
+  margin-left: 8%;
+}
 /*Página Agregar Usuarios*/
 
 .tablaAgregarUsuarios{
@@ -304,6 +303,31 @@ justify-content: center;
   justify-content:center;
   margin: 0px;
   height: 360px;
+}
+.tablaUsuarios{
+  display: grid;
+  border-color: #54571f;
+  grid-column: auto;
+  grid-template-columns: 120px 220px 220px 120px 120px 120px 120px 120px 120px;
+  grid-template-rows: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #78796e;
+  font-size: 13px;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+.cuadroUsuarios{
+  background-color:#F2F3F4;
+  margin: 0px;
+  padding: 2px;
+  text-align:center;
+  border: 0px;
+  border-radius: 15px;
+  width: 210px;
+  height: 30px;
+  
 }
 .cuadroParaUsuarios{
   background-color: #F2F3F4;
@@ -354,17 +378,6 @@ justify-content: center;
   color:#54571f;
   font-size: 15px; 
   width: 100%;
-}
-.botonAgregarUsuario{
-  background-color: #f29263;
-  font-size: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #54571f;
-  width: 200px;
-  font-weight: bold;
-  padding: 2px;
-  margin-bottom: 20px;
-  margin-left: 40%;
 }
 
 /*InfoVentas*/
@@ -424,6 +437,7 @@ justify-content: center;
   text-align:justify;
   width: 100%;
   justify-content:center;
+  margin-bottom: 80px;
   
 
 }
@@ -557,7 +571,7 @@ justify-content: center;
   color: #54571f;
   justify-content:left;
   margin-left: 430px;
-  margin-bottom: 120px;
+  margin-bottom: 200px;
   margin-top: 0px;
   padding: 10px 0px 40px 0px;
 }
@@ -577,13 +591,13 @@ justify-content: center;
   font-size: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
-  width: 100px;
+  width: 150px;
   font-weight: bold;
   text-align: center;
   padding: 1px;
   border-radius: 20px;
   margin-top: 0px; 
-  margin-left: 170px;
+  margin-left: 150px;
 }
 .tablaFormularioLogin{
   display: grid;
@@ -703,19 +717,7 @@ justify-content: center;
   padding: 4px 20px 0px 20px;
   border-radius: 20px;
 }
-.botonAgregarUsuario{
-  background-color: #f29263;
-  font-size: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #54571f;
-  width: 170px;
-  font-weight: bold;
-  text-align: center;
-  padding: 1px;
-  border-radius: 20px;
-  margin-top: 0px;
-  margin-left: 600px;
-}
+
 .iconosConfBorrar{
     background-color: #ffffff;
     text-align: right;
@@ -744,15 +746,14 @@ justify-content: center;
   border-color: #54571f;
   grid-column: auto;
   grid-template-columns:330px 330px ;
-  grid-template-rows: 65px 65px 65px 65px  ;
+  grid-template-rows: 65px 65px 65px 65px 65px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
   font-size: 18px;
   text-align: center;
-  width: 100%;
   justify-content:center;
   margin: 0px;
-  height: 340px;
+  height: 100%;
 }
 .cuadroProductos{
   padding: 2px 0px 0px 0px;
@@ -831,26 +832,13 @@ justify-content: center;
   border-color: #54571f;
   grid-column: auto;
   grid-template-columns: 160px 160px 160px 160px 160px 160px 160px 160px;
-  grid-template-rows: 50px 50px 50px 50px;
+  grid-template-rows: 50px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
   font-size: 15px;
   text-align: center;
   width: 100%;
   justify-content: center;
-  }
-  .botonAgregarUsuario{
-      background-color: #f29263;
-      font-size: 20px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #54571f;
-      width: 170px;
-      font-weight: bold;
-      text-align: center;
-      padding: 1px;
-      border-radius: 20px;
-      margin-top: 0px;
-      margin-left: 600px;
   }
   .iconosConfBorrar{
       background-color: #ffffff;
@@ -915,9 +903,10 @@ justify-content: center;
   color: #54571f;
   width: 200px;
   font-weight: bold;
-  padding: 2px;
-  margin-bottom: 20px;
+  padding: 3px;
+  margin-bottom: 100px;
   margin-left: 45%;
+
 }
 .botonAgregarProducto{
   background-color: #f29263;
@@ -998,9 +987,11 @@ justify-content: center;
   padding: 1px;
   border-radius: 20px;
   margin-top: 0px;
-  margin-left: 600px;
+  margin-left: 44%;
+  margin-bottom: 30px;
+  padding: 2px;
 }
-      
+  
 .iconosConfBorrar{
   background-color: #ffffff;
   text-align: right;
@@ -1023,3 +1014,43 @@ justify-content: center;
 .mainConteiner > footer{
   background-color: #F2F3F4;
 }
+/*Autorización login */
+.mensajeAutorización{
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+  margin-bottom: 5%;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 3px;
+  color: #54571f;
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.botonVolverHome{
+  background-color: #f29263;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #54571f;
+  width: 200px;
+  font-weight: bold;
+  padding: 2px;
+  margin-bottom: 10px;
+  margin-left: 40%;
+}
+.tablaCerrarSesion{
+  display: grid;
+  grid-column: auto;
+  grid-template-columns: 90px;
+  grid-template-rows: 80px 25px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 17px;
+  padding: 1px;
+}
+.letraCerrarSesion{
+  font-size: 15px;
+}
+    
