@@ -59,6 +59,7 @@ const ListadoUsuarios=()=>{
                         <div className = "cuadroTablaUsuarios letraEncabezado">Rol</div>
                         <div className = "cuadroTablaUsuarios letraEncabezado">Editar</div>
                         <div className = "cuadroTablaUsuarios letraEncabezado">Eliminar</div>
+                        <div className = "cuadroTablaUsuarios letraEncabezado">Ver</div>
                     </div>
 
                     {usuarios.map((usuario) => {
@@ -89,7 +90,18 @@ const ListadoUsuarios=()=>{
                                 </div></Link>
                                 
                                 <div className = "cuadroTablaUsuarios botonModulos"><img className ="icoTabla" onClick={() => deleteUsuario(usuario.id_usuario)} src= {iconoBasurero} alt="Eliminar"/></div>
-                            
+                                
+                                <Link to={{
+                                    pathname: '/verUsuario',
+                                    state: {id_usuario:usuario.id_usuario,
+                                        nombre:usuario.nombre, 
+                                        correo:usuario.correo,
+                                        celular:usuario.celular,
+                                        fecha_ingreso: usuario.fecha_ingreso,
+                                        estado: usuario.estado,
+                                        rol:usuario.rol},
+                                }} img className ="icoTabla"><div className = "cuadroTablaUsuarios botonModulos"><i class="fas fa-eye"></i>
+                                </div></Link>
                             </div>
                         </section>
 

@@ -308,7 +308,7 @@ text-align: center;
   display: grid;
   border-color: #54571f;
   grid-column: auto;
-  grid-template-columns: 120px 220px 220px 120px 120px 120px 120px 120px 120px;
+  grid-template-columns: 120px 220px 220px 120px 120px 120px 120px 120px 120px 120px;
   grid-template-rows: 50px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #78796e;
