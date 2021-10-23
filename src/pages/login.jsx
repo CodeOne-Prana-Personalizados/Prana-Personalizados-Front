@@ -7,7 +7,9 @@ import logoCodeOne from "media/logoCodeOne.png";
 import logogmail from 'media/gmail.png';
 import GoogleLogin from 'react-google-login';
 
-function Login() {
+const Login = () => {
+
+    
     const respuestaGoogle=(respuesta)=>{
         console.log(respuesta);
         console.log(respuesta.profileObj);

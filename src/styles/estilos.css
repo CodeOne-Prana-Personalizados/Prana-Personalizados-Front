@@ -103,15 +103,24 @@ body {
 }
 
 .iconoUsuario{
-  height: 75px;
+  height: 70px;
+  margin-left: 14px;
 }
 .nombreUsuario{
-  font-size: 20px;
-}
-.nombreUsuario:hover{
-  cursor: pointer;
-  transform:scale(1.01);
-  font-weight:600;
+  display: grid;
+  grid-column: auto;
+  grid-template-columns: 180px;
+  grid-template-rows: 200px;
+  font-size:21px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  width: 180px;
+  font-weight: bold;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  margin-right: 50px;
+  padding: auto;
 }
 .botonUsuario{
   display: flex;
@@ -200,6 +209,9 @@ footer{
   color: #54571f;
   font-size: 40px;
 }
+.margin-bottom{
+  margin-bottom: 50px;
+}
 
 .encabezadoTabal{
 display: grid;
@@ -214,6 +226,7 @@ text-align: center;
   height: 20px;
   padding: 4px 0px 0px 0px;
   border-radius: 20px;
+  color: #54571f;
 }
 .letraEncabezado{
   font-weight: bold;
@@ -236,7 +249,7 @@ text-align: center;
   text-align:center;
   border: 0px;
   border-radius: 15px;
-  width: 115px;
+  width: 110px;
   height: 30px;
   
 }
@@ -245,8 +258,8 @@ text-align: center;
   display: grid;
   border-color: #54571f;
   grid-column: auto;
-  grid-template-columns: 160px 160px 160px 160px 160px 160px 160px 160px;
-  grid-template-rows: 65px;
+  grid-template-columns: 160px 160px 160px 160px 160px 160px 160px;
+  grid-template-rows: 50px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
   font-size: 15px;
@@ -254,7 +267,7 @@ text-align: center;
   width: 100%;
   height: 100%;
   justify-content: center;
-  margin-left: 5%; 
+  padding: 2px;
 }
 
 .botonAgregar{
@@ -299,7 +312,7 @@ text-align: center;
   display: grid;
   border-color: #54571f;
   grid-column: auto;
-  grid-template-columns: 130px 130px 130px 130px 130px 130px 130px 130px 130px 130px ;
+  grid-template-columns: 120px 260px 120px 120px 120px 120px 120px 120px;
   grid-template-rows: 50px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #78796e;
@@ -307,6 +320,18 @@ text-align: center;
   text-align: center;
   width: 100%;
   justify-content: center;
+  margin-bottom: 0px;
+}
+.cuadroUsuarios{
+  background-color:#F2F3F4;
+  margin: 0px;
+  padding: 2px;
+  text-align:center;
+  border: 0px;
+  border-radius: 15px;
+  width: 250px;
+  height: 30px;
+  
 }
 .cuadroParaUsuarios{
   background-color: #F2F3F4;
@@ -357,17 +382,6 @@ text-align: center;
   color:#54571f;
   font-size: 15px; 
   width: 100%;
-}
-.botonAgregarUsuario{
-  background-color: #f29263;
-  font-size: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #54571f;
-  width: 200px;
-  font-weight: bold;
-  padding: 2px;
-  margin-bottom: 10px;
-  margin-left: 40%;
 }
 
 /*InfoVentas*/
@@ -427,6 +441,7 @@ text-align: center;
   text-align:justify;
   width: 100%;
   justify-content:center;
+  margin-bottom: 80px;
   
 
 }
@@ -448,8 +463,8 @@ text-align: center;
   display: grid;
   border-color: #54571f;
   grid-column: auto;
-  grid-template-columns: 155px 155px 155px 155px 155px 155px 155px 155px;
-  grid-template-rows: 50px 50px 50px;
+  grid-template-columns: 155px 155px 155px 155px 155px 155px ;
+  grid-template-rows: 70px ;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
   font-size: 15px;
@@ -706,22 +721,7 @@ text-align: center;
   padding: 4px 20px 0px 20px;
   border-radius: 20px;
 }
-.botonAgregarUsuario{
-  grid-template-columns: 200px 200px;
-  grid-template-rows:  50px 50px 50px 50px 50px 50px 50px 50px;
-  background-color: #f29263;
-  font-size: 15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #54571f;
-  width: 170px;
-  font-weight: bold;
-  text-align: center;
-  padding: 3px;
-  border-radius: 20px;
-  margin-top: 30px;
-  margin-left: 600px;
-  margin-bottom: 50px;
-}
+
 .iconosConfBorrar{
     background-color: #ffffff;
     text-align: right;
@@ -836,26 +836,13 @@ text-align: center;
   border-color: #54571f;
   grid-column: auto;
   grid-template-columns: 160px 160px 160px 160px 160px 160px 160px 160px;
-  grid-template-rows: 50px 50px 50px 50px;
+  grid-template-rows: 50px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #54571f;
   font-size: 15px;
   text-align: center;
   width: 100%;
   justify-content: center;
-  }
-  .botonAgregarUsuario{
-      background-color: #f29263;
-      font-size: 20px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #54571f;
-      width: 170px;
-      font-weight: bold;
-      text-align: center;
-      padding: 1px;
-      border-radius: 20px;
-      margin-top: 0px;
-      margin-left: 600px;
   }
   .iconosConfBorrar{
       background-color: #ffffff;
@@ -920,9 +907,10 @@ text-align: center;
   color: #54571f;
   width: 200px;
   font-weight: bold;
-  padding: 2px;
-  margin-bottom: 20px;
+  padding: 3px;
+  margin-bottom: 100px;
   margin-left: 45%;
+
 }
 .botonAgregarProducto{
   background-color: #f29263;
@@ -1003,9 +991,11 @@ text-align: center;
   padding: 1px;
   border-radius: 20px;
   margin-top: 0px;
-  margin-left: 600px;
+  margin-left: 44%;
+  margin-bottom: 30px;
+  padding: 2px;
 }
-      
+  
 .iconosConfBorrar{
   background-color: #ffffff;
   text-align: right;
@@ -1054,3 +1044,17 @@ text-align: center;
   margin-bottom: 10px;
   margin-left: 40%;
 }
+.tablaCerrarSesion{
+  display: grid;
+  grid-column: auto;
+  grid-template-columns: 90px;
+  grid-template-rows: 80px 25px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 17px;
+  padding: 1px;
+}
+.letraCerrarSesion{
+  font-size: 15px;
+}
+    

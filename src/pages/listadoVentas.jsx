@@ -1,110 +1,115 @@
 import {Link} from 'react-router-dom';
 import Footer from 'components/Footer';
-/*Se importa logo */
-import logoPrana from "media/logoNavbar.png";
-import logoCodeOne from "media/logoCodeOne.png";
-/*Se importa iconos necesarios para la página*/
-import iconoUsuarioVerde from "media/iconoUsuario.png";
-import iconoBuscar from "media/iconoBusqueda.ico";
 /*Iconos de editar o eliminar*/
 import iconoGranaje from "media/ruedaConfiguración.png";
 import iconoBasurero from "media/basurero.png";
 import PrivateRoute from 'components/PrivateRoute';
+import HeaderP from 'components/HeaderP';
+import Ventas from "../services/venta";
+import React, {useState, useEffect} from "react";
 
-function ListadoVentas() {
+const ListadoVentas=()=>{
+
+
+    const [ventas, setVentas] = useState([]);
+
+    useEffect(() => {
+        retrieveVentas();
+      }, []);
+
+    const retrieveVentas = () => {
+        Ventas.getAll()
+          .then(response => {
+            console.log(response.data);
+            setVentas(response.data.ventas);
+            
+          })
+          .catch(e => {
+            console.log(e);
+          });
+      };
+
+      const deleteVenta = (id_venta) => {
+        Ventas.deleteVenta(id_venta)
+          alert('Venta Eliminada');
+      };
+
+
     return(
         <div className="listadoVentas">
             <PrivateRoute>
                 <body>
-                    <header> 
-                        <ul className="barraRedes">
-                            <li><i className="fas fa-palette"></i></li>
-                            <div className= "icoRedes">
-                                <li><i className=" fab fa-facebook"></i></li>
-                                <li><i className=" fab fa-instagram"></i></li>
-                                <li><i className="fab fa-whatsapp"></i></li>
-                            </div>
-                        </ul>
-                        <ul className="navbar">
-                            <li>
-                                <div>
-                                    <Link to = "/" className ="link">
-                                        <img className="boton logo" src={logoPrana} alt= "imagen" /> 
-                                    </Link>
+                    <HeaderP nombreBuscador='Buscar Venta' linkModulo= '/listadoVentas' nombreModulo = "Administración de Ventas"/>
+                        <main>
+                            <h1 className = "tituloProductos">Listado de Ventas</h1>
+                            <ul>                               
+                                <div className= "tablaListaVentas">
+                                <div className = "listadodeVentas letraEncabezado">ID Venta</div>
+                                <div className = "listadodeVentas letraEncabezado">Cliente</div>
+                                <div className = "listadodeVentas letraEncabezado">fecha</div>
+                                <div className = "listadodeVentas letraEncabezado">Estado</div>
+                                <div className = "listadodeVentas letraEncabezado">valor</div>
+                                <div className = "listadodeVentas letraEncabezado">Ver Información</div>
+                                <div className = "listadodeVentas letraEncabezado">Editar</div>
+                                <div className = "listadodeVentas letraEncabezado">Eliminar</div>
+                            
                                 </div>
-                            </li>
 
-                            <li>
-                                <div className="buscar">
-                                    <input placeholder ="Buscar ventas"/>
-                                    <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
-                                </div>
-                            </li>
-                            
-                                <li className ="boton tituloSeccionPagina"><Link to = "/listadoVentas" className ="link">Administración de Ventas</Link></li>
-                            
-                            
-                            <li>
-                                <div className = "botonUsuario">
-                                    <span className="nombreUsuario">Cerrar Sesión</span>
-                                    <img className ="iconoUsuario" src= {iconoUsuarioVerde} alt="iconoUsuario"/>
-                                </div>
-                            </li>
-                        </ul>
-                    </header>
-                        <main className= "tamañoPaginaIndex">
+                        {ventas.map((venta) => {
+                            return (
+
                             <section>
-                                <h1 className = "tituloProductos">Listado de Ventas</h1>
-                                <ul>
-                                    <li className= "tablaListaVentas">
-                                        <div className = "listadodeVentas letraEncabezado">ID Venta</div>
-                                        <div className = "listadodeVentas letraEncabezado">Cliente</div>
-                                        <div className = "listadodeVentas letraEncabezado">Producto</div>
-                                        <div className = "listadodeVentas letraEncabezado">Estado</div>
-                                        <div className = "listadodeVentas letraEncabezado">valor</div>
-                                        <div className = "listadodeVentas letraEncabezado">Ver Información</div>
-                                        <div className = "listadodeVentas letraEncabezado">Editar</div>
-                                        <div className = "listadodeVentas letraEncabezado">Eliminar</div>
-                                        
 
-                                        <div className = "listadodeVentas cuadroTabla ">0001</div>
-                                        <div className= "listadodeVentas cuadroTabla" > Personalizado </div>
-                                        <div className= "listadodeVentas cuadroTabla"> cuaderno </div>
-                                        <div className = "listadodeVentas cuadroTabla" >Disponible</div>
-                                        <div className = "listadodeVentas cuadroTabla" >$45.000-$50.000</div>
-                                        <div className = "cuadroTabla botonModulos letraEncabezado"><Link to = "/infoVentas" className ="link">Ver Información</Link></div>
-                                        <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                        <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
+
+                                <div className= "tablaListaVentas">
+                                    <div className = "listadodeVentas cuadroTabla">{venta.id_venta}</div>
+                                    <div className = "listadodeVentas cuadroTabla">{venta.id_cliente}</div>
+                                    <div className = "listadodeVentas cuadroTabla">{venta.fecha_venta}</div>
+                                    <div className = "listadodeVentas cuadroTabla">{venta.estado_venta}</div>
+                                    <div className = "listadodeVentas cuadroTabla">{venta.valor_total}</div>
+
+                                    <Link  to={{
+                                    pathname: '/verVenta',
+                                    state: {id_venta: venta.id_venta,
+                                        id_cliente: venta.id_cliente,
+                                        nombre_producto: venta.nombre_producto,
+                                        nombre_cliente: venta.nombre_cliente,
+                                        vendedor: venta.vendedor,
+                                        fecha_venta: venta.fecha_venta,
+                                        estado_venta: venta.estado_venta,
+                                        valor_venta: venta.valor_venta,
+                                        cantidad:venta.cantidad,
+                                        valor_total: venta.valor_total},
+                                }} img className ="icoTabla"><div className = "cuadroTabla botonModulos"><i class="fas fa-eye"></i>
+                                </div></Link>
+
+                                    <Link to={{
+                                        pathname: '/editarVenta',
+                                        state: {id_venta: venta.id_venta,
+                                            id_cliente: venta.id_cliente,
+                                            nombre_producto: venta.nombre_producto,
+                                            nombre_cliente: venta.nombre_cliente,
+                                            vendedor: venta.vendedor,
+                                            fecha_venta: venta.fecha_venta,
+                                            estado_venta: venta.estado_venta,
+                                            valor_venta: venta.valor_venta,
+                                            cantidad:venta.cantidad,
+                                            valor_total: venta.valor_total},
+                                    }} img className ="icoTabla">
                                         
+                                        <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>
+                                    </div></Link>
+
+                                    <div className = "cuadroTabla botonModulos"><img className ="icoTabla" onClick={() => deleteVenta(venta.id_venta)} src= {iconoBasurero} alt="Eliminar"/></div>
 
                                     
-                                        <div className = "listadodeVentas cuadroTabla">0002</div>
-                                        <div className = "listadodeVentas cuadroTabla">Personalizado</div>
-                                        <div className = "listadodeVentas cuadroTabla">llavero </div>
-                                        <div className = "listadodeVentas cuadroTabla">Disponible</div>
-                                        <div className = "listadodeVentas cuadroTabla">$10.000-$20.000</div>
-                                        <div className = "cuadroTabla botonModulos letraEncabezado">Ver Información</div>
-                                        <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                        <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
-                                        
-
-                                        
-                                        <div className = "listadodeVentas cuadroTabla">0003</div>
-                                        <div className = "listadodeVentas cuadroTabla">Personalizado</div>
-                                        <div className = "listadodeVentas cuadroTabla ">mug</div>
-                                        <div className = "listadodeVentas cuadroTabla">Disponible</div>
-                                        <div className = "listadodeVentas cuadroTabla">$20.000-$40.000</div>
-                                        <div className = "cuadroTabla botonModulos letraEncabezado">Ver Información</div>
-                                        <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/></div>
-                                        <div className = "cuadroTabla botonModulos" ><img className ="icoTabla" src= {iconoBasurero} alt="Eliminar"/></div>
-                                    </li>
-                                    <div className = "botonAgregarVenta2 botonModulos titulo centrar"> 
-                                        
-                                            <span><Link to = "/agregarVenta" className ="link">Agregar Venta</Link></span>
-                                        
-                                    </div>
-                                </ul>
+                                </div>
                             </section>
+
+                            );
+                        })}
+                        <div className = "botonAgregarUsuario botonModulos titulo centrar"> <span><Link to = "/agregarVenta" className ="link">Agregar Venta</Link></span></div>
+                        </ul>
                         </main>
                         <Footer />
 

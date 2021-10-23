@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 import PrivateRoute from 'components/PrivateRoute';
 import HeaderP from 'components/HeaderP';
 
-const EditarProducto=(props) => {
+const VerProducto=(props) => {
 
     const location = useLocation()
     console.log(location)
@@ -78,7 +78,7 @@ const EditarProducto=(props) => {
                 <body>
                     <HeaderP nombreBuscador='Buscar Producto' linkModulo= '/listadoProductos' nombreModulo = "Administración de Productos"/>
                     <main>
-                        <h1 className = "tituloProductos">Editar Productos</h1>
+                        <h1 className = "tituloProductos" >Información Producto</h1>
                         <ul>
                         <form  className="tablaAgregarUsuarios" action="ejemplo.php" method="get" >
                             
@@ -86,24 +86,24 @@ const EditarProducto=(props) => {
                             <p className="inputProducto cuadroProductos" ><input onChange={handleInputChange} name="id_producto" value={nuevaInfo.id_producto} readOnly="readonly"/></p>
 
                             <p className = "letraEncabezado cuadroProductos" >Nombre </p>
-                            <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="nombre_producto" value={nuevaInfo.nombre_producto}/></p>
+                            <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="nombre_producto" value={nuevaInfo.nombre_producto} readOnly="readonly"/></p>
 
                             <p className = "letraEncabezado cuadroProductos" >Valor del Producto </p>
-                            <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="number" name="valor_unitario"  value={nuevaInfo.valor_unitario} /></p>
+                            <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="number" name="valor_unitario"  value={nuevaInfo.valor_unitario} readOnly="readonly"/></p>
 
                             
                             <p className = "letraEncabezado cuadroProductos" >Estado </p>
-                            <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="estado" value={nuevaInfo.estado}/></p>
+                            <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="estado" value={nuevaInfo.estado} readOnly="readonly"/></p>
 
             
                             <p className = "letraEncabezado cuadroProductos" >Descripcion </p>
-                            <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="descripcion" value={nuevaInfo.descripcion}/></p>
+                            <p className="inputProducto cuadroProductos"><input onChange={handleInputChange} type="text" name="descripcion" value={nuevaInfo.descripcion} readOnly="readonly"/></p>
 
 
                         </form>
                         </ul>
                         <ul>
-                        <div onClick={saveProducto} className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/listadoProductos' className ="link"><span>Guardar Cambios</span></Link></div>
+                        <div className = "botonAgregarUsuario botonModulos titulo centrar"> <Link to='/listadoProductos' className ="link"><span>Regresar</span></Link></div>
                         </ul>
                     </main>
                     <Footer />
@@ -113,4 +113,4 @@ const EditarProducto=(props) => {
 
     );
 }
-export default  EditarProducto;
+export default  VerProducto;
