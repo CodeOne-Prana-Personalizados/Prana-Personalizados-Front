@@ -8,6 +8,7 @@ import http from "../http-common";
 import PrivateRoute from 'components/PrivateRoute';
 import HeaderP from 'components/HeaderP';
 import Usuarios from "../services/usuario";
+import Productos from "../services/codeone";
 
 const AgregarVenta = () => {
 
@@ -18,6 +19,7 @@ const AgregarVenta = () => {
         vendedor: "",
         fecha_venta: "",
         estado_venta:"",
+        valor_venta:0,
     }) 
 
     function handleChange(event){
@@ -36,6 +38,8 @@ const AgregarVenta = () => {
         http.post("/ventas", input);
         console.log(input);
     }
+
+    /*usuarios*/
 
     const [usuarios, setUsuarios] = useState([]);
 
@@ -56,7 +60,30 @@ const AgregarVenta = () => {
       };
 
       const [vendedor, setUsuario] = useState([]);
-     const [selectedUsuario, setSelectedUsuario] = useState('');
+      const [selectedUsuario, setSelectedUsuario] = useState('');
+
+      /*Productos*/
+      const [productos, setProductos] = useState([]);
+
+    useEffect(() => {
+        retrieveProductos();
+      }, []);
+
+    const retrieveProductos = () => {
+        Productos.getAll()
+          .then(response => {
+            console.log(response.data);
+            setProductos(response.data.productos);
+            
+          })
+          .catch(e => {
+            console.log(e);
+          });
+      };
+
+      const [producto, setProducto] = useState([]);
+      const [selectedProducto, setSelectedProducto] = useState('');
+
 
 
 
@@ -83,7 +110,7 @@ const AgregarVenta = () => {
 
                                         <div className = "cuadroTabla cuadroBlanco letraEncabezado ">Vendedor</div>
                                         
-                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa">
+                                        <div  className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa">
                                             <select value={input.vendedor} onChange={e => setSelectedUsuario(e.target.value)}>
                                                 <option value="">Seleccione el Vendedor</option>
                                                 {usuarios.map(vendedor => (
@@ -96,7 +123,7 @@ const AgregarVenta = () => {
                                     
                                     </form>
 
-                                    <form action="ejemplo.php" method="get">
+                                    <form name='datos' method='post' action='grabar.php'>
                                     <li className = "tablaVenta2">
 
                                         <div className = "cuadroTabla cuadroBlanco letraEncabezado">Fecha </div>
@@ -104,13 +131,7 @@ const AgregarVenta = () => {
                                         <div className = "cuadroTabla cuadroBlanco  letraEncabezado">Nombre del Cliente</div>
                                         <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" ><input type="text" onChange={handleChange} name="nombre_cliente" size="40" value={input.nombre_cliente} /></div>
                                         <div className = "cuadroTabla cuadroBlanco letraEncabezado">Estado de la Venta</div>
-                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><select  onChange={handleChange} name="estado" value={input.estado_venta} name="estado">
-                                            <option selected value="0"> Elige una opción </option>
-                                            <option value="1">En proceso</option> 
-                                            <option value="2">Cancelada</option> 
-                                            <option value="2">En tregada </option> 
-                                            </select>
-                                        </div>
+                                        <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"><input type="text" onChange={handleChange} name="estado_venta" value={input.estado_venta}/></div>
                                     </li>
                                     </form>
 
@@ -122,48 +143,20 @@ const AgregarVenta = () => {
                         <section>
                             <div className= "tablaNumeroProductos">
                                 <div className = "cuadroTabla cuadroBlanco letraEncabezado">Producto 1</div>
-                                <div className = "cuadroTabla infoAgregarVenta inputAgregarventa"><select name="estado">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="1">Cuaderno</option> 
-                                    <option value="2">llavero</option> 
-                                    <option value="2">Base celular </option> 
-                                    <option value="2">Agenda</option> 
-                                    <option value="2">Planeador</option> 
-                                    <option value="2">Mug</option> 
-                                    <option value="2">Calendario</option> 
-                                    <option value="2">Lapicero</option> 
-                                </select></div>
+                                <div className = "cuadroTabla infoAgregarVenta inputAgregarventa"><input type="number" onChange={handleChange} name="id_producto" value={input.id_producto}/></div>
                                 <div className = "cuadroTabla cuadroBlanco letraEncabezado">Valor Unitario</div>
-                                <div className = "cuadroTabla">--</div>
+                                <div className = "cuadroTabla infoAgregarVenta inputAgregarventa"><input type="number" onChange={handleChange} name="valor_venta" value={input.valor_venta}/></div>
                                 <div className = "cuadroTabla cuadroBlanco letraEncabezado">Cantidad</div>
-                                <div className = "cuadroTabla infoAgregarVenta inputAgregarventa inputAgregarventa" ><input type="number" name="Cantidad"/></div>
-                                <div className = "cuadroTabla cuadroBlanco letraEncabezado">Valor Total</div>
-                                <div className = "cuadroTabla ">--</div>
+                                <div className = "cuadroTabla infoAgregarVenta inputAgregarventa"><input type="number" onChange={handleChange} name="cantidad" value={input.cantidad}/></div>
+
                                 
-                                <div className = "cuadroTabla cuadroBlanco letraEncabezado">Producto 2</div>
-                                <div className = "cuadroTabla infoAgregarVenta inputAgregarventa inputAgregarventa"><select name="estado">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="1">Cuaderno</option> 
-                                    <option value="2">llavero</option> 
-                                    <option value="2">Base celular </option> 
-                                    <option value="2">Agenda</option> 
-                                    <option value="2">Planeador</option> 
-                                    <option value="2">Mug</option> 
-                                    <option value="2">Calendario</option> 
-                                    <option value="2">Lapicero</option> 
-                                </select></div>
-                                <div className = "cuadroTabla cuadroBlanco letraEncabezado">Valor Unitario</div>
-                                <div className = "cuadroTabla">--</div>
-                                <div className = "cuadroTabla cuadroBlanco letraEncabezado">Cantidad</div>
-                                <div className = "cuadroTabla infoAgregarVenta inputAgregarventa" ><input type="number" name="Cantidad"/></div>
-                                <div className = "cuadroTabla cuadroBlanco letraEncabezado">Valor Total</div>
-                                <div className = "cuadroTabla ">--</div>
+
                             </div>
                         </section>
                         
                         <section className = "tablaValorTotal">
                             <div className = "tablaValorTotal cuadroValorTotal letraEncabezado">Valor total de la compra</div>
-                            <div className = "cuadroTabla letraEncabezado">--</div>
+                            <div className = "cuadroTabla infoAgregarVenta inputAgregarventa"><span> onChange={handleChange} name="valor_total" value={valor_venta*cantidad} </span></div>
                         </section>
                         <section>
                             <div onClick={handleClic} className = "botonAgregarVenta botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"> <span>Agregar Ventas</span></Link></div>
