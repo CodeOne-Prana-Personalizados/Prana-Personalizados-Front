@@ -14,8 +14,8 @@ class Ventas {
     return http.put("/ventas", data);
   }
 
-  deleteVentas(id_ventas) {
-    return http.delete(`/ventas?id=${id_ventas}`, {data:{id_ventas: id_ventas}});
+  deleteVentas(id_venta) {
+    return http.delete(`/ventas?id=${id_venta}`, {data:{id_venta: id_venta}});
   }
 
 }
