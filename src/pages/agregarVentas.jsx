@@ -21,6 +21,8 @@ const AgregarVenta = () => {
         fecha_venta: "",
         estado_venta:"",
         valor_venta:0,
+        cantidad:0,
+        valor_total:0,
     }) 
 
     function handleChange(event){
@@ -39,29 +41,6 @@ const AgregarVenta = () => {
         http.post("/ventas", input);
         console.log(input);
     }
-
-    /*usuarios*/
-
-    const [usuarios, setUsuarios] = useState([]);
-
-    useEffect(() => {
-        retrieveUsuarios();
-      }, []);
-
-    const retrieveUsuarios = () => {
-        Usuarios.getAll()
-          .then(response => {
-            console.log(response.data);
-            setUsuarios(response.data.usuarios);
-            
-          })
-          .catch(e => {
-            console.log(e);
-          });
-      };
-
-      const [vendedor, setUsuario] = useState([]);
-      const [selectedUsuario, setSelectedUsuario] = useState('');
 
 
 
@@ -85,15 +64,7 @@ const AgregarVenta = () => {
                                         <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" ><input type="number" onChange={handleChange} name="id_cliente" size="40" value={input.id_cliente}/></div>
 
                                         <div className = "cuadroTabla cuadroBlanco letraEncabezado ">Vendedor</div>
-                                        
-                                        <div  className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa">
-                                            <select value={input.vendedor} onChange={e => setSelectedUsuario(e.target.value)}>
-                                                <option value="">Seleccione el Vendedor</option>
-                                                {usuarios.map(vendedor => (
-                                                <option key={vendedor.nombre}>{vendedor.nombre}</option>
-                                                ))}
-                                            </select>
-                                        </div>
+                                        <div  className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa"> <div className = "cuadroValorTotal cuadroTabla infoAgregarVenta inputAgregarventa" > <input type="text" onChange={handleChange} name="vendedor" size="40" value={input.vendedor}/></div></div>
                                     </li>
 
                                     
