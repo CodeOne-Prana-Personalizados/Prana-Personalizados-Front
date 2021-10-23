@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 import PrivateRoute from 'components/PrivateRoute';
 import HeaderP from 'components/HeaderP';
 
-const EditarUsuario =(props) =>{
+const VerUsuario =(props) =>{
 
     const location = useLocation()
     console.log(location)
@@ -85,34 +85,34 @@ const EditarUsuario =(props) =>{
                 <body> 
                     <HeaderP nombreBuscador='Buscar Usuario' linkModulo= '/listadoUsuarios' nombreModulo = "Administración de Usuarios"/>
                         <main>
-                            <h1 className = "tituloProductos">Editar Usuario</h1>
+                            <h1 className = "tituloProductos">Información Usuario</h1>
                             <ul>
                                 <form  className="tablaAgregarUsuarios" action="ejemplo.php" method="get" >
 
                                     <p className = "letraEncabezado " >ID: </p>
-                                    <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleInputChange} name="id_usuario" size="40" value={nuevaInfo.id_usuario} /></p>
+                                    <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleInputChange} name="id_usuario" size="40" value={nuevaInfo.id_usuario} readOnly="readonly"/></p>
 
                                     <p className = "letraEncabezado " >Nombre: </p>
-                                    <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleInputChange} name="nombre" size="40" value={nuevaInfo.nombre} /></p>
+                                    <p className="inputUsuario cuadroParaUsuarios"><input type="text" onChange={handleInputChange} name="nombre" size="40" value={nuevaInfo.nombre} readOnly="readonly"/></p>
 
                                     <p className = "letraEncabezado " >Correo Gmail: </p>
-                                    <p className="inputUsuario cuadroParaUsuarios"><input type="email" onChange={handleInputChange} name="correo" size="40" value={nuevaInfo.correo} /></p>
+                                    <p className="inputUsuario cuadroParaUsuarios"><input type="email" onChange={handleInputChange} name="correo" size="40" value={nuevaInfo.correo} readOnly="readonly"/></p>
 
                                     <p className = "letraEncabezado  " >Número de Celular:</p>
-                                    <p className="inputUsuario cuadroParaUsuarios" ><input type="tel" onChange={handleInputChange} name="celular" value={nuevaInfo.celular}/></p>
+                                    <p className="inputUsuario cuadroParaUsuarios" ><input type="tel" onChange={handleInputChange} name="celular" value={nuevaInfo.celular} readOnly="readonly"/></p>
                             
                                     <p className = "letraEncabezado  " >Fecha de Ingreso:</p>
-                                    <p className="inputUsuario cuadroParaUsuarios" > <input type="date" onChange={handleInputChange} name="fecha_ingreso" value={nuevaInfo.fecha_ingreso}/></p>
+                                    <p className="inputUsuario cuadroParaUsuarios" > <input type="date" onChange={handleInputChange} name="fecha_ingreso" value={nuevaInfo.fecha_ingreso} readOnly="readonly"/></p>
 
                                     <p className = "letraEncabezado  " >Estado:</p>
-                                    <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleInputChange} name="estado" value={nuevaInfo.estado}/></p>
+                                    <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleInputChange} name="estado" value={nuevaInfo.estado} readOnly="readonly"/></p>
 
                                     <p className = "letraEncabezado  " >Rol:</p>
-                                    <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleInputChange} name="rol" value={nuevaInfo.rol} /></p>
+                                    <p className="inputUsuario cuadroParaUsuarios" > <input type="text" onChange={handleInputChange} name="rol" value={nuevaInfo.rol} readOnly="readonly"/></p>
 
 
                                 </form>
-                                <div onClick={saveUsuario} className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/listadoUsuarios' className="link"> <span>Guardar Cambios</span></Link></div>
+                                <div className = "botonAgregarUsuario botonModulos titulo centrar"><Link to='/listadoUsuarios' className="link"> <span>Regresar</span></Link></div>
                               </ul>
                         </main>
                     <Footer />
@@ -121,5 +121,5 @@ const EditarUsuario =(props) =>{
         </div>
     );
 }
-export default EditarUsuario;
+export default VerUsuario;
 
