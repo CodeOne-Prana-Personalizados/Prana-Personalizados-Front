@@ -156,7 +156,7 @@ const AgregarVenta = () => {
                         
                         <section className = "tablaValorTotal">
                             <div className = "tablaValorTotal cuadroValorTotal letraEncabezado">Valor total de la compra</div>
-                            <div className = "cuadroTabla infoAgregarVenta inputAgregarventa"><span> onChange={handleChange} name="valor_total" value={valor_venta*cantidad} </span></div>
+                            <div className = "cuadroTabla infoAgregarVenta inputAgregarventa"><input onChange={handleChange} name="valor_total" value={input.valor_total} /></div>
                         </section>
                         <section>
                             <div onClick={handleClic} className = "botonAgregarVenta botonModulos titulo centrar"><Link to='/comprobanteAgregar' className="link"> <span>Agregar Ventas</span></Link></div>

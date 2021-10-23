@@ -21,4 +21,3 @@ class Ventas {
 }
 
 export default new Ventas();
-
