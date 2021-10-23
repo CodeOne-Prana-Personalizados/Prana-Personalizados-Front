@@ -19,6 +19,19 @@ const ListadoProductos =() => {
     const { logout } = useAuth0();
 
 
+    const [busqueda, setBusqueda] = useState("")
+    useEffect(() => {
+        console.log("busqueda",busqueda)
+        console.log("lista original", ListadoProductos)
+        console.log(
+            "lista filtrada",
+             ListadoProductos.filter ((elemento) => {
+                 console.log("elemento",elemento)
+                 return elemento.Nombre.includes(busqueda);
+            })
+        );
+    }, [busqueda]);
+    
 
     const [productos, setProductos] = useState([]);
 
@@ -64,9 +77,18 @@ const ListadoProductos =() => {
                             </div>
                         </li>
 
-                        <li>
+                        <li>        
+                            
                             <div className="buscar">
-                                <input placeholder ="Buscar Productos"/>
+                             
+                                <input
+                                value={busqueda}
+                                onChange={e=>setBusqueda(e.target.value)}
+                                 placeholder ="Buscar Productos"
+                                 />
+                                   
+                                    
+                                    
                                 <img className="iconoBusqueda" src={iconoBuscar} alt="search" />
                             </div>
                         </li>
