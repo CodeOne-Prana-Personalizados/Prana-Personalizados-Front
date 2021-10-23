@@ -73,8 +73,8 @@ const ListadoVentas=()=>{
                                     <Link to={{
                                         pathname: '/editarVenta',
                                         state: {id_venta:venta.id_venta,
-                                            nombre:venta.id_cliente, 
-                                            correo:venta.fecha_venta,
+                                            id_clienre:venta.id_cliente, 
+                                            fecha_venta:venta.fecha_venta,
                                             estado_venta:venta.estado_venta,
                                             valor_venta: venta.valor_venta,},
                                     }} img className ="icoTabla">
