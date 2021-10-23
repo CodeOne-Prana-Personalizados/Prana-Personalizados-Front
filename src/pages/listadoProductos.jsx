@@ -53,7 +53,6 @@ const ListadoProductos =() => {
             
                         <div className = "cuadroTabla letraEncabezado">ID</div>
                         <div className = "cuadroTabla letraEncabezado">Nombre</div>
-                        <div className = "cuadroTabla letraEncabezado">Descripcion</div>
                         <div className = "cuadroTabla letraEncabezado">valor</div>
                         <div className = "cuadroTabla letraEncabezado">Estado</div>
                         <div className = "cuadroTabla letraEncabezado">Editar</div>
@@ -72,7 +71,6 @@ const ListadoProductos =() => {
                             <div className= "tablaProductos">
                                 <div className = "cuadroTabla">{producto.id_producto}</div>
                                 <div className = "cuadroTabla">{producto.nombre_producto}</div>
-                                <div className = "cuadroTabla">{producto.descripcion}</div>
                                 <div className = "cuadroTabla">{producto.valor_unitario}</div>
                                 <div className = "cuadroTabla">{producto.estado}</div>
                             

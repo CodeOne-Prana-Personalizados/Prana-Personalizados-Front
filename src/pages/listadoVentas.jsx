@@ -85,11 +85,16 @@ const ListadoVentas=()=>{
 
                                     <Link to={{
                                         pathname: '/editarVenta',
-                                        state: {id_venta:venta.id_venta,
-                                            id_clienre:venta.id_cliente, 
-                                            fecha_venta:venta.fecha_venta,
-                                            estado_venta:venta.estado_venta,
-                                            valor_venta: venta.valor_venta,},
+                                        state: {id_venta: venta.id_venta,
+                                            id_cliente: venta.id_cliente,
+                                            nombre_producto: venta.nombre_producto,
+                                            nombre_cliente: venta.nombre_cliente,
+                                            vendedor: venta.vendedor,
+                                            fecha_venta: venta.fecha_venta,
+                                            estado_venta: venta.estado_venta,
+                                            valor_venta: venta.valor_venta,
+                                            cantidad:venta.cantidad,
+                                            valor_total: venta.valor_total},
                                     }} img className ="icoTabla">
                                         
                                         <div className = "cuadroTabla botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>

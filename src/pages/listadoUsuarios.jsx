@@ -78,9 +78,11 @@ const ListadoUsuarios=()=>{
                                     pathname: '/editarUsuario',
                                     state: {id_usuario:usuario.id_usuario,
                                         nombre:usuario.nombre, 
+                                        correo:usuario.correo,
+                                        celular:usuario.celular,
                                         fecha_ingreso: usuario.fecha_ingreso,
                                         estado: usuario.estado,
-                                        rol:usuario.rol},
+                                        rol:usuario.ro},
                                 }} img className ="icoTabla"><div className = "cuadroTablaUsuarios botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>
                                 </div></Link>
 
@@ -88,6 +90,8 @@ const ListadoUsuarios=()=>{
                                     pathname: '/verUsuario',
                                     state: {id_usuario:usuario.id_usuario,
                                         nombre:usuario.nombre, 
+                                        correo:usuario.correo,
+                                        celular:usuario.celular,
                                         fecha_ingreso: usuario.fecha_ingreso,
                                         estado: usuario.estado,
                                         rol:usuario.rol},
