@@ -14,7 +14,7 @@ import planeador from 'media/carruselProductos/planeador.jpg';
 import baseCelular from 'media/carruselProductos/baseCelular.png' ;
 import { useAuth0 } from "@auth0/auth0-react";
 import HeaderP from 'components/HeaderP';
-
+ 
 
 const Index = () => {
     
