@@ -1,6 +1,6 @@
 import Index from './pages';
 import ListadoProductos from './pages/listadoProductos';
-import InfoProductos from './pages/infoProductos';
+//import InfoProductos from './pages/infoProductos';
 import AgregarProducto from './pages/agregarProducto';
 import EditarProducto from './pages/editarProducto';
 import EditarUsuario from './pages/editarUsuario';
@@ -33,7 +33,7 @@ function App() {
                   <ListadoProductos />
                 </Route>
                 <Route path='/infoProductos'>
-                  <InfoProductos />
+                <ListadoProductos />
                 </Route>
                 <Route path='/agregarProducto'>
                   <AgregarProducto />
