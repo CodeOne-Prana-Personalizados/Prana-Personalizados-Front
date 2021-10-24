@@ -22,7 +22,7 @@ export default axios.create({
 export const obtenerDatosUsuario = async (successCallback, errorCallback) => {
   const options = {
     method: 'GET',
-    url: 'http://localhost:5000/usuarios/self',
+    url: '',
     headers: {
       Authorization: getToken(), // 3. enviarle el token a backend
     },

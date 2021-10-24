@@ -82,7 +82,7 @@ const ListadoUsuarios=()=>{
                                         celular:usuario.celular,
                                         fecha_ingreso: usuario.fecha_ingreso,
                                         estado: usuario.estado,
-                                        rol:usuario.ro},
+                                        rol:usuario.rol},
                                 }} img className ="icoTabla"><div className = "cuadroTablaUsuarios botonModulos"><img className ="icoTabla" src= {iconoGranaje} alt="Editar"/>
                                 </div></Link>
 

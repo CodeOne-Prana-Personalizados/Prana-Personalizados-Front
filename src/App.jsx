@@ -1,20 +1,19 @@
-import Index from './pages';
-import ListadoProductos from './pages/listadoProductos';
-import {InfoProductos} from './pages/infoproductos';
-import AgregarProducto from './pages/agregarProducto';
-import EditarProducto from './pages/editarProducto';
-import EditarUsuario from './pages/editarUsuario';
-import ListadoUsuarios from './pages/listadoUsuarios';
-import InfoUsuario from './pages/infoUsuario';
-import AgregarUsuario from './pages/agregarUsuario';
-import InfoVentas from './pages/infoVentas';
-import AgregarVenta from './pages/agregarVentas';
-import ListadoVentas from './pages/listadoVentas';
-import ComprobaciónAgregar from './pages/comprobacionAgregar';
-import ComprobanteEditar from './pages/comprobanteEditar';
-import VerProducto from './pages/verProducto';
-import VerUsuario from './pages/verUsuario';
-import Login from './pages/login';
+import Index from 'pages';
+import ListadoProductos from 'pages/listadoProductos.jsx';
+import AgregarProducto from 'pages/agregarProducto.jsx';
+import EditarProducto from 'pages/editarProducto.jsx';
+import EditarUsuario from 'pages/editarUsuario.jsx';
+import EditarVenta from 'pages/editarVenta.jsx';
+import ListadoUsuarios from 'pages/listadoUsuarios.jsx';
+import AgregarUsuario from 'pages/agregarUsuario.jsx';
+import AgregarVenta from 'pages/agregarVentas.jsx';
+import ListadoVentas from 'pages/listadoVentas.jsx';
+import ComprobaciónAgregar from 'pages/comprobaciónAgregar.jsx';
+import ComprobanteEditar from 'pages/comprobanteEditar.jsx';
+import VerProducto from 'pages/verProducto.jsx';
+import VerUsuario from 'pages/verUsuario.jsx';
+import VerVenta from 'pages/verVenta.jsx';
+import Login from 'pages/login.jsx';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'styles/estilos.css';
 import { Auth0Provider } from "@auth0/auth0-react";
@@ -32,14 +31,14 @@ function App() {
                 <Route path='/listadoProductos'>
                   <ListadoProductos />
                 </Route>
-                <Route path='/infoProductos'>
-                <InfoProductos/>
-                </Route>
                 <Route path='/agregarProducto'>
                   <AgregarProducto />
                 </Route>
                 <Route path='/editarProducto'>
                   <EditarProducto />
+                </Route>
+                <Route path='/editarVenta'>
+                  <EditarVenta />
                 </Route>
                 <Route path='/verProducto'>
                   <VerProducto />
@@ -50,17 +49,14 @@ function App() {
                 <Route path='/listadoVentas'>
                   <ListadoVentas />
                 </Route> 
-                <Route path='/infoVentas'>
-                  <InfoVentas />
-                </Route> 
                 <Route path='/agregarVenta'>
                   <AgregarVenta />
                 </Route>
+                <Route path='/verVenta'>
+                  <VerVenta />
+                </Route>
                 <Route path='/listadoUsuarios'>
                   <ListadoUsuarios />
-                </Route>
-                <Route path='/infoUsuario'>
-                  <InfoUsuario />
                 </Route>
                 <Route path='/agregarUsuario'>
                   <AgregarUsuario />

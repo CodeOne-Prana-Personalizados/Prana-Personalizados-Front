@@ -11,7 +11,7 @@ const AgregarProducto =() =>{
 
     const [input, setInput] =useState({
         id_producto: 0,
-        nombre_producto:'',
+        nombre_producto: "",
         valor_unitario: 0.0,
         estado: '',
         descripcion: ''
@@ -33,6 +33,8 @@ const AgregarProducto =() =>{
         http.post("/productos", input);
         console.log(input);
     }
+
+
 
 
     
