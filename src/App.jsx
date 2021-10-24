@@ -1,6 +1,6 @@
 import Index from './pages';
 import ListadoProductos from './pages/listadoProductos';
-import {InfoProductos} from './pages/infoProductos';
+import {InfoProductos} from './pages/infoproductos';
 import AgregarProducto from './pages/agregarProducto';
 import EditarProducto from './pages/editarProducto';
 import EditarUsuario from './pages/editarUsuario';
