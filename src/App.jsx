@@ -5,9 +5,7 @@ import EditarProducto from 'pages/editarProducto.jsx';
 import EditarUsuario from 'pages/editarUsuario.jsx';
 import EditarVenta from 'pages/editarVenta.jsx';
 import ListadoUsuarios from 'pages/listadoUsuarios.jsx';
-import InfoUsuario from 'pages/infoUsuario';
 import AgregarUsuario from 'pages/agregarUsuario.jsx';
-import InfoVentas from 'pages/infoVentas.jsx';
 import AgregarVenta from 'pages/agregarVentas.jsx';
 import ListadoVentas from 'pages/listadoVentas.jsx';
 import ComprobaciónAgregar from 'pages/comprobaciónAgregar.jsx';
@@ -51,9 +49,6 @@ function App() {
                 <Route path='/listadoVentas'>
                   <ListadoVentas />
                 </Route> 
-                <Route path='/infoVentas'>
-                  <InfoVentas />
-                </Route> 
                 <Route path='/agregarVenta'>
                   <AgregarVenta />
                 </Route>
@@ -62,9 +57,6 @@ function App() {
                 </Route>
                 <Route path='/listadoUsuarios'>
                   <ListadoUsuarios />
-                </Route>
-                <Route path='/infoUsuario'>
-                  <InfoUsuario />
                 </Route>
                 <Route path='/agregarUsuario'>
                   <AgregarUsuario />

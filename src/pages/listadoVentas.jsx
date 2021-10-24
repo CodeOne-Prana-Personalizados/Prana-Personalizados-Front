@@ -30,8 +30,8 @@ const ListadoVentas=()=>{
       };
 
 
-      const deleteVenta =(id_venta)=> {
-          Ventas.deleteVenta(id_venta)
+      const deleteVentas =(id_venta)=> {
+          Ventas.deleteVentas(id_venta)
           alert("Venta Eliminada")
       }
 
@@ -103,7 +103,7 @@ const ListadoVentas=()=>{
 
                                     
 
-                                    <div className = "cuadroTabla botonModulos"><img className ="icoTabla" onClick={() => deleteVenta(venta.id_venta)} src= {iconoBasurero} alt="Eliminar"/></div>
+                                <div className = "cuadroTabla botonModulos"><img className ="icoTabla" onClick={() => deleteVentas(venta.id_venta)} src= {iconoBasurero} alt="Eliminar"/></div>
 
                                     
                                 </div>
