@@ -1,6 +1,5 @@
 import Index from 'pages';
 import ListadoProductos from 'pages/listadoProductos.jsx';
-import InfoProductos from 'pages/infoProductos.jsx';
 import AgregarProducto from 'pages/agregarProducto.jsx';
 import EditarProducto from 'pages/editarProducto.jsx';
 import EditarUsuario from 'pages/editarUsuario.jsx';
@@ -33,9 +32,6 @@ function App() {
               <Switch>
                 <Route path='/listadoProductos'>
                   <ListadoProductos />
-                </Route>
-                <Route path='/infoProductos'>
-                  <InfoProductos />
                 </Route>
                 <Route path='/agregarProducto'>
                   <AgregarProducto />
