@@ -15,22 +15,27 @@ import http from "../http-common";
 import PrivateRoute from 'components/PrivateRoute';
 import { useAuth0 } from "@auth0/auth0-react";
 
-const ListadoProductos =() => {
+
+
+const ListadoProductos =({ListadoProductos, setEjecutarConsulta}) => {
     const { logout } = useAuth0();
+    const [busqueda, setBusqueda] = useState("");
+    const[ProductosFiltrados,setProductosFiltrados] = useState(ListadoProductos);
 
-
-    const [busqueda, setBusqueda] = useState("")
     useEffect(() => {
-        console.log("busqueda",busqueda)
-        console.log("lista original", ListadoProductos)
-        console.log(
-            "lista filtrada",
-             ListadoProductos.filter ((elemento) => {
-                 console.log("elemento",elemento)
-                 return elemento.Nombre.includes(busqueda);
-            })
-        );
-    }, [busqueda]);
+        console.log("busqueda",busqueda);
+        console.log("lista original", ListadoProductos);
+        setProductosFiltrados(
+        ListadoProductos.filter ((elemento) => {
+             console.log('elemento',elemento);
+            return JSON.stringify(elemento) .toLowerCase().includes(busqueda,toLowerCase());
+        })
+        ),
+    }, [busqueda, ListadoProductos]);
+
+    useEffect(() => {
+    },[ListadoProductos]);
+
     
 
     const [productos, setProductos] = useState([]);
