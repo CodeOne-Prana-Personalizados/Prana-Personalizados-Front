@@ -3,7 +3,7 @@ import cuadernoPsico from 'media/carruselProductos/cuadernoPsico.png';
 import PrivateRoute from 'components/PrivateRoute';
 import HeaderP from 'components/HeaderP';
 
-const InfoProductos =() =>{
+export const InfoProductos =() =>{
 
 
     return(
@@ -64,4 +64,4 @@ const InfoProductos =() =>{
         </div>
     );
 }
-export default InfoProductos;
+//export default InfoProductos;
