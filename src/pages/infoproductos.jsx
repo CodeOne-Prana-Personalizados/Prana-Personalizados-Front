@@ -11,7 +11,7 @@ export const InfoProductos =() =>{
             <PrivateRoute>
                 <body>
                 <HeaderP nombreBuscador='Buscar Producto' linkModulo= '/listadoProductos' nombreModulo = "Administración de Productos"/>
-
+ 
                         <main>
                             <section>
                                 <h1 className = "tituloProductos ">Informacion del Producto</h1>
