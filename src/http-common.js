@@ -10,7 +10,7 @@ const executeRequest = async (options, successCallback, errorCallback) => {
 };
 
 export default axios.create({
-  baseURL: "http://localhost:5000/api/v1/producto",
+  baseURL: "https://boiling-journey-65976.herokuapp.com/api/v1/producto",
   headers: {
     "Content-type": "application/json",
       Authorization: getToken(),
@@ -28,4 +28,4 @@ export const obtenerDatosUsuario = async (successCallback, errorCallback) => {
     },
   };
   await axios.request(options).then(successCallback).catch(errorCallback);
-};
+}
